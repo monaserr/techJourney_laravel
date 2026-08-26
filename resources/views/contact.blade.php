@@ -1,452 +1,640 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
+<head>
 
-<style>
-    .contact-page {
-        background: #f8fafc;
-        min-height: 70vh;
-        padding: 70px 20px;
-    }
+    <meta charset="UTF-8">
 
-    .contact-container {
-        max-width: 1000px;
-        margin: 0 auto;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .contact-title {
-        text-align: center;
-        margin-bottom: 45px;
-    }
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    .contact-title h1 {
-        color: #1e3a8a;
-        font-size: 38px;
-        font-weight: 800;
-        margin-bottom: 10px;
-    }
+    <title>Contact Us - Tech Journey</title>
 
-    .contact-title p {
-        color: #64748b;
-        font-size: 16px;
-        margin: 0;
-    }
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-    .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr 1.3fr;
-        gap: 25px;
-    }
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
 
-    .contact-card {
-        background: #ffffff;
-        border-radius: 14px;
-        padding: 30px;
-        box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
-    }
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
 
-    .contact-info h2,
-    .contact-form h2 {
-        color: #0f172a;
-        font-size: 22px;
-        font-weight: 700;
-        margin-bottom: 25px;
-    }
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-    .contact-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 15px;
-        margin-bottom: 22px;
-    }
 
-    .contact-icon {
-        width: 42px;
-        height: 42px;
-        min-width: 42px;
+    <style>
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+        }
 
-        border-radius: 10px;
-
-        background: #eef2ff;
-        color: #2563eb;
-
-        font-size: 18px;
-        font-weight: 700;
-    }
-
-    .contact-item h5 {
-        margin: 0 0 5px;
-
-        color: #0f172a;
-        font-size: 15px;
-        font-weight: 700;
-    }
-
-    .contact-item p {
-        margin: 0;
-
-        color: #64748b;
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    .contact-form .form-label {
-        color: #0f172a;
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 7px;
-    }
-
-    .contact-form .form-control {
-        width: 100%;
-
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-
-        padding: 11px 13px;
-
-        font-size: 14px;
-
-        box-shadow: none;
-    }
-
-    .contact-form .form-control:focus {
-        border-color: #2563eb;
-
-        box-shadow:
-            0 0 0 3px rgba(37, 99, 235, 0.10);
-    }
-
-    .contact-form textarea {
-        min-height: 130px;
-        resize: vertical;
-    }
-
-    .contact-submit {
-        width: 100%;
-
-        border: none;
-        border-radius: 8px;
-
-        padding: 12px;
-
-        background: linear-gradient(
-            135deg,
-            #2563eb,
-            #7c3aed
-        );
-
-        color: #ffffff;
-
-        font-size: 15px;
-        font-weight: 600;
-
-        cursor: pointer;
-
-        transition: 0.2s ease;
-    }
-
-    .contact-submit:hover {
-        transform: translateY(-1px);
-
-        box-shadow:
-            0 7px 18px rgba(37, 99, 235, 0.22);
-    }
-
-    .contact-social {
-        margin-top: 25px;
-    }
-
-    .contact-social h5 {
-        color: #0f172a;
-        font-size: 15px;
-        font-weight: 700;
-        margin-bottom: 12px;
-    }
-
-    .social-links {
-        display: flex;
-        gap: 8px;
-    }
-
-    .social-links a {
-        width: 35px;
-        height: 35px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 8px;
-
-        background: #eef2ff;
-        color: #2563eb;
-
-        text-decoration: none;
-
-        font-size: 13px;
-        font-weight: 700;
-    }
-
-    .social-links a:hover {
-        background: #2563eb;
-        color: #ffffff;
-    }
-
-    @media (max-width: 768px) {
 
         .contact-page {
-            padding: 45px 15px;
+
+            background-color: #F8FAFC;
+
+            min-height: 60vh;
+
+            padding: 70px 20px;
+
         }
+
+
+        .contact-container {
+
+            max-width: 900px;
+
+            margin: auto;
+
+        }
+
+
+        .contact-title {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+        }
+
 
         .contact-title h1 {
-            font-size: 30px;
+
+            color: #1E3A8A;
+
+            font-size: 32px;
+
+            font-weight: 700;
+
+            margin-bottom: 8px;
+
         }
 
-        .contact-grid {
-            grid-template-columns: 1fr;
+
+        .contact-title p {
+
+            color: #64748B;
+
+            margin: 0;
+
         }
+
 
         .contact-card {
-            padding: 25px;
+
+            background: #FFFFFF;
+
+            border-radius: 15px;
+
+            padding: 35px;
+
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+
         }
-    }
-</style>
 
 
-<main class="contact-page">
+        .contact-info {
 
-    <div class="contact-container">
+            background: #FFFFFF;
 
-        {{-- Page Title --}}
-        <div class="contact-title">
+            border-radius: 12px;
 
-            <h1>
-                Contact Us
-            </h1>
+            padding: 25px;
 
-            <p>
-                Tell us how we can help you.
-            </p>
+            height: 100%;
 
-        </div>
+            box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
+
+        }
 
 
-        <div class="contact-grid">
+        .contact-info h3 {
 
-            {{-- Contact Information --}}
-            <div class="contact-card contact-info">
+            color: #1E3A8A;
 
-                <h2>
-                    Get In Touch
-                </h2>
+            font-size: 20px;
+
+            font-weight: 700;
+
+            margin-bottom: 25px;
+
+        }
 
 
-                {{-- Email --}}
-                <div class="contact-item">
+        .contact-item {
 
-                    <div class="contact-icon">
-                        ✉
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .contact-item i {
+
+            color: #2563EB;
+
+            font-size: 20px;
+
+        }
+
+
+        .contact-item strong {
+
+            display: block;
+
+            color: #0F172A;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .contact-item span {
+
+            color: #64748B;
+
+            font-size: 14px;
+
+        }
+
+
+        .contact-form {
+
+            background: #FFFFFF;
+
+            border-radius: 12px;
+
+            padding: 25px;
+
+            height: 100%;
+
+            box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
+
+        }
+
+
+        .contact-form label {
+
+            color: #0F172A;
+
+            font-weight: 600;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .contact-form .form-control {
+
+            border: 1px solid #E2E8F0;
+
+            border-radius: 8px;
+
+            padding: 11px 14px;
+
+        }
+
+
+        .contact-form .form-control:focus {
+
+            border-color: #2563EB;
+
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+
+        }
+
+
+        .contact-form textarea {
+
+            min-height: 130px;
+
+            resize: vertical;
+
+        }
+
+
+        .send-btn {
+
+            width: 100%;
+
+            border: none;
+
+            border-radius: 8px;
+
+            padding: 12px;
+
+            background-color: #2563EB;
+
+            color: #FFFFFF;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+
+        }
+
+
+        .send-btn:hover {
+
+            background-color: #1E3A8A;
+
+        }
+
+
+        .success-message {
+
+            background-color: #ECFDF5;
+
+            border: 1px solid #A7F3D0;
+
+            color: #047857;
+
+            padding: 12px 15px;
+
+            border-radius: 8px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .error-message {
+
+            background-color: #FEF2F2;
+
+            border: 1px solid #FECACA;
+
+            color: #B91C1C;
+
+            padding: 12px 15px;
+
+            border-radius: 8px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        @media (max-width: 768px) {
+
+            .contact-page {
+
+                padding: 40px 15px;
+
+            }
+
+            .contact-card {
+
+                padding: 20px;
+
+            }
+
+            .contact-title h1 {
+
+                font-size: 27px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    {{-- Navbar --}}
+    @include('includes.navbar')
+
+
+    {{-- Contact Page --}}
+    <main class="contact-page">
+
+        <div class="contact-container">
+
+
+            {{-- Title --}}
+            <div class="contact-title">
+
+                <h1>
+                    Contact Us
+                </h1>
+
+                <p>
+                    Tell us how we can help you
+                </p>
+
+            </div>
+
+
+            {{-- Main Card --}}
+            <div class="contact-card">
+
+                <div class="row g-4">
+
+
+                    {{-- Contact Information --}}
+                    <div class="col-lg-5">
+
+                        <div class="contact-info">
+
+                            <h3>
+                                Get In Touch
+                            </h3>
+
+
+                            <div class="contact-item">
+
+                                <i class="bi bi-envelope"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Email
+                                    </strong>
+
+                                    <span>
+                                        info@techjourney.com
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="contact-item">
+
+                                <i class="bi bi-telephone"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Phone
+                                    </strong>
+
+                                    <span>
+                                        +20 123 456 7890
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="contact-item">
+
+                                <i class="bi bi-geo-alt"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Location
+                                    </strong>
+
+                                    <span>
+                                        Egypt
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <h5 class="mt-4 mb-3">
+                                Follow Us
+                            </h5>
+
+
+                            <div class="d-flex gap-2">
+
+                                <a
+                                    href="#"
+                                    class="btn btn-light"
+                                >
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+
+
+                                <a
+                                    href="#"
+                                    class="btn btn-light"
+                                >
+                                    <i class="bi bi-twitter-x"></i>
+                                </a>
+
+
+                                <a
+                                    href="#"
+                                    class="btn btn-light"
+                                >
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+
+
+                                <a
+                                    href="#"
+                                    class="btn btn-light"
+                                >
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    <div>
 
-                        <h5>
-                            Email
-                        </h5>
 
-                        <p>
-                            info@techjourney.com
-                        </p>
+                    {{-- Contact Form --}}
+                    <div class="col-lg-7">
+
+                        <div class="contact-form">
+
+
+                            {{-- Success Message --}}
+                            @if(session('success'))
+
+                                <div class="success-message">
+
+                                    {{ session('success') }}
+
+                                </div>
+
+                            @endif
+
+
+                            {{-- Validation Errors --}}
+                            @if($errors->any())
+
+                                <div class="error-message">
+
+                                    <ul class="mb-0">
+
+                                        @foreach($errors->all() as $error)
+
+                                            <li>
+                                                {{ $error }}
+                                            </li>
+
+                                        @endforeach
+
+                                    </ul>
+
+                                </div>
+
+                            @endif
+
+
+
+                            <form
+                                method="POST"
+                                action="{{ route('contact.send') }}"
+                            >
+
+                                @csrf
+
+
+                                {{-- Name --}}
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Your Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        class="form-control"
+                                        placeholder="Your Name"
+                                        value="{{ old('name') }}"
+                                        required
+                                    >
+
+                                </div>
+
+
+
+                                {{-- Email --}}
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Your Email
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        class="form-control"
+                                        placeholder="Your Email"
+                                        value="{{ old('email') }}"
+                                        required
+                                    >
+
+                                </div>
+
+
+
+                                {{-- Subject --}}
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Subject
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        name="subject"
+                                        class="form-control"
+                                        placeholder="Subject"
+                                        value="{{ old('subject') }}"
+                                        required
+                                    >
+
+                                </div>
+
+
+
+                                {{-- Message --}}
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Your Message
+                                    </label>
+
+                                    <textarea
+                                        name="message"
+                                        class="form-control"
+                                        placeholder="Your Message"
+                                        required
+                                    >{{ old('message') }}</textarea>
+
+                                </div>
+
+
+
+                                {{-- Submit --}}
+                                <button
+                                    type="submit"
+                                    class="send-btn"
+                                >
+                                    Send Message
+                                </button>
+
+
+                            </form>
+
+
+                        </div>
 
                     </div>
 
-                </div>
-
-
-                {{-- Phone --}}
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-                        ☎
-                    </div>
-
-                    <div>
-
-                        <h5>
-                            Phone
-                        </h5>
-
-                        <p>
-                            +20 123 456 7890
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                {{-- Location --}}
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-                        📍
-                    </div>
-
-                    <div>
-
-                        <h5>
-                            Location
-                        </h5>
-
-                        <p>
-                            Egypt
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                {{-- Social --}}
-                <div class="contact-social">
-
-                    <h5>
-                        Follow Us
-                    </h5>
-
-                    <div class="social-links">
-
-                        <a href="#" aria-label="Facebook">
-                            f
-                        </a>
-
-                        <a href="#" aria-label="X">
-                            X
-                        </a>
-
-                        <a href="#" aria-label="LinkedIn">
-                            in
-                        </a>
-
-                        <a href="#" aria-label="Instagram">
-                            ◎
-                        </a>
-
-                    </div>
 
                 </div>
 
             </div>
 
-
-            {{-- Contact Form --}}
-            <div class="contact-card contact-form">
-
-                <h2>
-                    Send Us A Message
-                </h2>
-
-
-                <form method="POST" action="#">
-
-                    @csrf
-
-
-                    {{-- Name --}}
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Your Name
-                        </label>
-
-                        <input
-                            type="text"
-                            name="name"
-                            class="form-control"
-                            placeholder="Your Name"
-                            value="{{ old('name') }}"
-                            required
-                        >
-
-                    </div>
-
-
-                    {{-- Email --}}
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Your Email
-                        </label>
-
-                        <input
-                            type="email"
-                            name="email"
-                            class="form-control"
-                            placeholder="Your Email"
-                            value="{{ old('email') }}"
-                            required
-                        >
-
-                    </div>
-
-
-                    {{-- Subject --}}
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Subject
-                        </label>
-
-                        <input
-                            type="text"
-                            name="subject"
-                            class="form-control"
-                            placeholder="Subject"
-                            value="{{ old('subject') }}"
-                            required
-                        >
-
-                    </div>
-
-
-                    {{-- Message --}}
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Your Message
-                        </label>
-
-                        <textarea
-                            name="message"
-                            class="form-control"
-                            placeholder="Your Message"
-                            required
-                        >{{ old('message') }}</textarea>
-
-                    </div>
-
-
-                    {{-- Button --}}
-                    <button
-                        type="submit"
-                        class="contact-submit"
-                    >
-                        Send Message
-                    </button>
-
-                </form>
-
-            </div>
-
         </div>
 
-    </div>
+    </main>
 
-</main>
 
-@endsection
+    {{-- Footer --}}
+    @include('includes.footer')
+
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- Main JS -->
+    <script src="{{ asset('js/script.js') }}"></script>
+
+</body>
+
+</html>
