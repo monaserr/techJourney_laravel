@@ -1,10 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 
-// route حقيقي بمسار ثابت، من غير أي parameter
-Route::get('/', fn() => view('welcome'))->name('home');
+Route::get('/', [IndexController::class, 'index'])
+    ->name('index');
 
+Route::post('/tracks/enroll', [IndexController::class, 'enroll'])
+    ->name('tracks.enroll');
+
+    
 Route::get('/tracks-fake', fn() => view('welcome'))->name('tracks');
 Route::get('/resources-fake', fn() => view('welcome'))->name('resources');
 Route::get('/events-fake', fn() => view('welcome'))->name('students.events');

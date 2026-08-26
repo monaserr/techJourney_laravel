@@ -3,7 +3,7 @@
 
             <!-- Logo -->
             <div class="navbar-left-group">
-                <a href="{{ route('home') }}" class="logo">
+                <a href="{{ route('index') }}" class="logo">
                     <img src="{{ asset('images/logo without background.png') }}" alt="Tech Journey">
                 </a>
             </div>
@@ -18,7 +18,7 @@
             <ul class="nav-links collapse" id="navLinks">
 
                 <li>
-                    <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">
+                    <a href="{{ route('index') }}" class="{{ request()->routeIs('index') ? 'active' : '' }}">
                         Home
                     </a>
                 </li>
@@ -49,7 +49,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('home') }}#about">
+                    <a href="{{ route('index') }}#about">
                         About
                     </a>
                 </li>

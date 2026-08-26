@@ -37,3 +37,65 @@ function openBooking(title, price, id, date, location, imageSrc) {
   document.getElementById("modalLocation").innerText = location;
   document.getElementById("modalImage").src = imageSrc;
 }
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================================
+       SCROLL ANIMATIONS
+    ========================================= */
+
+    const animatedElements = document.querySelectorAll(
+        ".about-badge, " +
+        ".about-line, " +
+        ".about-title, " +
+        ".about-subtitle, " +
+        ".tracks-badge, " +
+        ".track-line, " +
+        ".tracks-title, " +
+        ".tracks-subtitle, " +
+        ".events-badge, " +
+        ".events-subtitle, " +
+        ".about-card, " +
+        ".track-card, " +
+        ".home-event-card, " +
+        ".assess-banner"
+    );
+
+    const observer = new IntersectionObserver(
+        function (entries, observer) {
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+
+                    observer.unobserve(entry.target);
+                }
+
+            });
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    animatedElements.forEach(function (element) {
+        observer.observe(element);
+    });
+
+
+    /* =========================================
+       HERO BUTTON ANIMATION
+    ========================================= */
+
+    const heroButton = document.querySelector(".hero-button");
+
+    if (heroButton) {
+        heroButton.style.opacity = "0";
+        heroButton.style.transform = "translateX(-50px)";
+
+        setTimeout(function () {
+            heroButton.style.opacity = "1";
+            heroButton.style.transform = "translateX(0)";
+        }, 600);
+    }
+
+});

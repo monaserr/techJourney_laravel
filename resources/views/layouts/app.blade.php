@@ -27,7 +27,7 @@
     @stack('head')
 </head>
 
-<body class="{{ request()->routeIs('home') || request()->routeIs('tracks') ? 'animated-page' : '' }}">
+<body class="{{ request()->routeIs('index') || request()->routeIs('tracks') ? 'animated-page' : '' }}">
 
     @include('layouts.partials.navbar')
 

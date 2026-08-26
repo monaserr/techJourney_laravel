@@ -13,7 +13,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h5 class="mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="{{ route('home') }}" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="{{ route('index') }}" class="text-white text-decoration-none">Home</a></li>
                         <li class="mb-2"><a href="{{ route('tracks') }}" class="text-white text-decoration-none">Tracks</a></li>
                         <li class="mb-2"><a href="{{ route('resources') }}" class="text-white text-decoration-none">Resources</a></li>
                         <li class="mb-2"><a href="{{ route('students.events') }}" class="text-white text-decoration-none">Events</a></li>
