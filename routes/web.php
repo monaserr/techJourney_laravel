@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', [IndexController::class, 'index'])
     ->name('index');
@@ -14,7 +15,14 @@ Route::get('/tracks-fake', fn() => view('welcome'))->name('tracks');
 Route::get('/resources-fake', fn() => view('welcome'))->name('resources');
 Route::get('/events-fake', fn() => view('welcome'))->name('students.events');
 Route::get('/instructor-events-fake', fn() => view('welcome'))->name('instructors.events.index');
-Route::get('/contact-fake', fn() => view('welcome'))->name('contact');
-Route::get('/profile-fake', fn() => view('welcome'))->name('profile');
-Route::get('/login-fake', fn() => view('welcome'))->name('login');
-Route::post('/logout-fake', fn() => view('welcome'))->name('logout');
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');Route::get('/profile-fake', fn() => view('welcome'))->name('profile');
+Route::get('/login', [LoginController::class, 'showLogin'])
+    ->name('login');
+
+Route::post('/login', [LoginController::class, 'login'])
+    ->name('login.submit');
+
+Route::post('/logout', [LoginController::class, 'logout'])
+    ->name('logout');
