@@ -13,10 +13,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
-<link rel="stylesheet" href="{{ asset('css/trackCss.css') }}">
-
-<link rel="stylesheet" href="{{ asset('css/resourseCss.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/event_istructor_style.css') }}">
 
     @stack('styles')
 
@@ -33,7 +30,7 @@
 
 <body class="{{ request()->routeIs('index') || request()->routeIs('tracks') ? 'animated-page' : '' }}">
 
-@include('includes.navbar')
+    @include('includes.navbar')
 
     @yield('content')
 

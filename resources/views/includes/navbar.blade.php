@@ -36,9 +36,9 @@
                 </li>
 
                 @php
-                    $eventsLink = auth()->check() && auth()->user()->isInstructor()
-                        ? route('instructors.events.index')
-                        : route('students.events');
+                                    $eventsLink = auth()->check() && auth()->user()->isInstructor()
+                                        ? route('instructors.events.index')
+                    : route('student.events.index');
                 @endphp
 
                 <li>
