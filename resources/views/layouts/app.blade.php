@@ -11,9 +11,46 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/event_istructor_style.css') }}">
+    {{-- Main CSS --}}
+    <link rel="stylesheet"
+        href="{{ asset('css/style.css') }}?v={{ filemtime(public_path('css/style.css')) }}">
+
+    {{-- Tracks CSS --}}
+    @if (request()->routeIs('tracks'))
+        <link rel="stylesheet"
+            href="{{ asset('css/trackCss.css') }}?v={{ filemtime(public_path('css/trackCss.css')) }}">
+    @endif
+
+    {{-- Events CSS --}}
+    @if (
+        request()->routeIs('student.events.*') ||
+        request()->routeIs('instructor.events.*')
+    )
+        <link rel="stylesheet"
+            href="{{ asset('css/event_istructor_style.css') }}?v={{ filemtime(public_path('css/event_istructor_style.css')) }}">
+    @endif
+
+    {{-- Resources CSS --}}
+    @if (request()->routeIs('resources'))
+        <link rel="stylesheet"
+            href="{{ asset('css/resourseCss.css') }}?v={{ filemtime(public_path('css/resourseCss.css')) }}">
+    @endif
+
+    {{-- Profile CSS --}}
+    @if (
+        request()->routeIs('profile') ||
+        request()->routeIs('edit_profile')
+    )
+        <link rel="stylesheet"
+            href="{{ asset('css/profile.css') }}?v={{ filemtime(public_path('css/profile.css')) }}">
+    @endif
+
+    {{-- Edit Profile CSS --}}
+    @if (request()->routeIs('edit_profile'))
+        <link rel="stylesheet"
+            href="{{ asset('css/editProfile.css') }}?v={{ filemtime(public_path('css/editProfile.css')) }}">
+    @endif
+
 
     @stack('styles')
 

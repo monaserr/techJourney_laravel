@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\TrackController;
+use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\Instructor\EventController as InstructorEventController;
 use App\Http\Controllers\Student\EventController as StudentEventController;
 use Illuminate\Http\Request;
@@ -13,11 +15,10 @@ Route::get('/', [IndexController::class, 'index'])
 Route::post('/tracks/enroll', [IndexController::class, 'enroll'])
     ->name('tracks.enroll');
 
-Route::get('/tracks-fake', fn() => view('welcome'))
-    ->name('tracks');
+Route::get('/tracks', [TrackController::class, 'index'])->name('tracks');
+Route::post('/tracks/enroll', [IndexController::class, 'enroll'])->name('tracks.enroll');
 
-Route::get('/resources-fake', fn() => view('welcome'))
-    ->name('resources');
+Route::get('/resources', [ResourceController::class, 'index'])->name('resources');
 
 Route::get('/student/events', [StudentEventController::class, 'index'])
     ->name('student.events.index');
