@@ -16,7 +16,7 @@
                         <li class="mb-2"><a href="{{ route('index') }}" class="text-white text-decoration-none">Home</a></li>
                         <li class="mb-2"><a href="{{ route('tracks') }}" class="text-white text-decoration-none">Tracks</a></li>
                         <li class="mb-2"><a href="{{ route('resources') }}" class="text-white text-decoration-none">Resources</a></li>
-                        <li class="mb-2"><a href="{{ route('students.events') }}" class="text-white text-decoration-none">Events</a></li>
+                        <li class="mb-2"><a href="{{ route('student.events.index') }}" class="text-white text-decoration-none">Events</a></li>
                     </ul>
                 </div>
 
