@@ -33,12 +33,8 @@ class LoginController extends Controller
         ]);
 
 
-        // Remember me
-        $remember = $request->boolean('remember');
-
-
-        // Attempt login
-        if (Auth::attempt($credentials, $remember)) {
+        // Attempt login بدون Remember Me
+        if (Auth::attempt($credentials)) {
 
             // Regenerate session
             $request->session()->regenerate();

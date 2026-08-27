@@ -285,12 +285,12 @@
 
                                     {{-- Explore --}}
 
-<a href="{{ route('resources', ['track' => $slug]) }}#top" class="explore-link">
+                                    <a href="{{ route('resources', ['track' => $slug]) }}#top" class="explore-link">
 
-    Explore
-    <span>→</span>
+                                        Explore
+                                        <span>→</span>
 
-</a>
+                                    </a>
 
                                 </div>
 
@@ -504,7 +504,7 @@
 
                             <div class="modal-footer">
 
-                                <a class="event-book-btn" href="#">
+                                <a class="event-book-btn" href="{{ route('student.events.index') }}">
 
                                     Book Now
 
@@ -526,7 +526,7 @@
 
             <div class="text-center mt-5">
 
-                <a href="#" class="explore-btn">
+                <a href="{{ route('student.events.index') }}" class="explore-btn">
 
                     Explore All Events
 
