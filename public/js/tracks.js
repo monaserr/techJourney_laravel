@@ -5,30 +5,54 @@ function toggleRoadmap(button) {
     roadmapContent.classList.toggle("show");
 }
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    const cards = document.querySelectorAll(".track-card");
 
-    const observer = new IntersectionObserver(function (entries, observer) {
+document.addEventListener('DOMContentLoaded', function () {
 
-        entries.forEach(function (entry) {
+    document.querySelectorAll('.roadmap').forEach(function (button) {
 
-            if (entry.isIntersecting) {
+        const targetId = button.getAttribute('data-bs-target');
+        const target = document.querySelector(targetId);
+        const arrow = button.querySelector('.roadmap-arrow');
 
-                entry.target.classList.add("show");
+        if (!target || !arrow) {
+            return;
+        }
 
-                observer.unobserve(entry.target);
+        target.addEventListener('shown.bs.collapse', function () {
+            button.classList.add('active');
+            arrow.textContent = '↑';
+        });
+
+        target.addEventListener('hidden.bs.collapse', function () {
+            button.classList.remove('active');
+            arrow.textContent = '↓';
+        });
+
+    });
+
+
+    try {
+
+        const removed = JSON.parse(
+            localStorage.getItem('techJourneyRemovedCourses') || '[]'
+        );
+
+        document.querySelectorAll('.enroll-track').forEach(function (btn) {
+
+            if (removed.includes(String(btn.dataset.courseId))) {
+
+                btn.disabled = false;
+                btn.textContent = 'Enroll';
+                btn.classList.remove('enrolled');
+
             }
 
         });
 
-    }, {
-        threshold: 0.15
-    });
+        localStorage.removeItem('techJourneyRemovedCourses');
 
-
-    cards.forEach(function (card) {
-        observer.observe(card);
-    });
+    } catch (error) {
+    }
 
 });

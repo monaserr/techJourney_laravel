@@ -8,6 +8,7 @@ use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\Instructor\EventController as InstructorEventController;
 use App\Http\Controllers\Student\EventController as StudentEventController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\RegisterController;
 
 Route::get('/', [IndexController::class, 'index'])
     ->name('index');
@@ -66,6 +67,13 @@ Route::post('/contact', function (Request $request) {
 
 Route::get('/profile-fake', fn() => view('welcome'))
     ->name('profile');
+
+
+Route::get('/register', [RegisterController::class, 'show'])
+    ->name('register');
+
+Route::post('/register', [RegisterController::class, 'register'])
+    ->name('register.store');    
 
 Route::get('/login', [LoginController::class, 'showLogin'])
     ->name('login');

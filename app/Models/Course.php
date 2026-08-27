@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Resource;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Course extends Model
 {
@@ -11,12 +11,10 @@ class Course extends Model
 
     protected $fillable = [
         'title',
-        'description',
-        'image',
     ];
 
-    public function resources()
+    public function resources(): HasMany
     {
-        return $this->hasMany(Resource::class, 'course_id');
+        return $this->hasMany(Resource::class);
     }
 }

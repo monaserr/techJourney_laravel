@@ -8,7 +8,7 @@
 
     {{-- ================= HERO ================= --}}
 
-    <section class="tracks-hero">
+    <section class="hero">
 
         <div class="container">
 
@@ -21,11 +21,13 @@
                 from the basics to becoming job-ready.
             </p>
 
-            <form method="GET" action="{{ route('tracks') }}" class="track-search-form">
+           
 
-    <div class="track-search-box">
+    <form method="GET" action="{{ route('tracks') }}" class="search-area d-flex gap-2">
 
-        <span class="track-search-icon">
+    <div class="search-box d-flex align-items-center flex-grow-1">
+
+        <span class="search-icon">
             <i class="bi bi-search"></i>
         </span>
 
@@ -38,7 +40,7 @@
 
     </div>
 
-    <button type="submit" class="track-filter-button">
+    <button type="submit" class="filter-btn">
         <i class="bi bi-funnel"></i>
         <span>Filter</span>
     </button>
@@ -52,7 +54,7 @@
 
     {{-- ================= TRACKS ================= --}}
 
-    <section class="tracks-list-section">
+    <section class="tracks-section">
 
         <div class="container">
 
