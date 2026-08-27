@@ -1,0 +1,331 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+
+
+/* =========================
+   RESOURCES PAGE
+========================= */
+
+.resources-page {
+    background: #f7f8fc;
+    min-height: 100vh;
+    color: #18213a;
+}
+
+/* HERO */
+
+.resources-hero {
+    padding: 70px 0 45px;
+    background: #ffffff;
+}
+
+.resources-hero h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #18213a;
+}
+
+.resources-hero p {
+    margin: 15px 0 0;
+    max-width: 720px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #596174;
+}
+
+
+/* RESOURCES SECTION */
+
+.resources-section {
+    padding: 35px 0 80px;
+}
+
+
+/* FILTER BUTTONS */
+
+.resources-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.resources-filters .pf-filter-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+    padding: 10px 22px;
+
+    border: 1px solid #dddff0 !important;
+    border-radius: 12px !important;
+
+    background: #ffffff !important;
+    color: #596174 !important;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.resources-filters .pf-filter-btn:hover {
+    border-color: #7c3aed !important;
+    color: #7c3aed !important;
+    transform: translateY(-1px);
+}
+
+.resources-filters .pf-filter-btn.active {
+    background: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: #ffffff !important;
+    box-shadow: 0 5px 14px rgba(124, 58, 237, .20);
+}
+
+
+/* TOPIC TITLE */
+
+.pf-group-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 30px 0 14px;
+
+    font-size: 19px;
+    font-weight: 750;
+    color: #18213a;
+}
+
+.pf-group-title i {
+    color: #7c3aed;
+    font-size: 18px;
+}
+
+
+/* RESOURCE LIST */
+
+.resource-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* RESOURCE ROW */
+
+.pf-resource-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    width: 100%;
+    min-height: 92px;
+
+    padding: 16px 18px;
+
+    background: #ffffff;
+    border: 1px solid #e5e7ef;
+    border-radius: 16px;
+
+    box-shadow: 0 3px 12px rgba(24, 33, 58, .04);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+.pf-resource-row:hover {
+    transform: translateY(-2px);
+    border-color: #ddd2fe;
+    box-shadow: 0 8px 24px rgba(124, 58, 237, .10);
+}
+
+
+/* ICON */
+
+.pf-resource-icon {
+    width: 52px;
+    height: 52px;
+
+    flex: 0 0 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.pf-resource-icon i {
+    color: #ffffff;
+}
+
+
+/* INFO */
+
+.resource-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.pf-resource-title {
+    margin: 0 0 5px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #18213a;
+}
+
+.pf-resource-desc {
+    margin: 0;
+
+    color: #596174;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* BADGE */
+
+.pf-badge {
+    flex-shrink: 0;
+
+    padding: 6px 11px;
+
+    border-radius: 999px;
+
+    background: #f1edff;
+    color: #7c3aed;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* OPEN BUTTON */
+
+.pf-link-btn {
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #f3f0ff;
+    color: #7c3aed;
+
+    text-decoration: none;
+
+    transition: all .2s ease;
+}
+
+.pf-link-btn:hover {
+    background: #7c3aed;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+
+/* EMPTY */
+
+.empty-resources {
+    padding: 30px;
+
+    background: #ffffff;
+    border: 1px solid #e5e7ef;
+    border-radius: 16px;
+
+    text-align: center;
+    color: #596174;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .resources-hero {
+        padding: 45px 0 30px;
+    }
+
+    .resources-hero h1 {
+        font-size: 30px;
+    }
+
+    .resources-hero p {
+        font-size: 15px;
+    }
+
+    .resources-filters {
+        gap: 8px;
+    }
+
+    .resources-filters .pf-filter-btn {
+        padding: 9px 15px;
+        font-size: 14px;
+    }
+
+    .pf-resource-row {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .resource-info {
+        width: calc(100% - 68px);
+    }
+
+    .pf-badge {
+        margin-left: 68px;
+    }
+
+    .pf-link-btn {
+        margin-left: auto;
+    }
+}
+
+
+/* Fix Resources Filter Buttons */
+
+#pf-filters .pf-filter-btn {
+    color: #596174 !important;
+    background: #ffffff !important;
+    border: 1px solid #dddff0 !important;
+}
+
+#pf-filters .pf-filter-btn:hover {
+    color: #7c3aed !important;
+    background: #ffffff !important;
+    border-color: #7c3aed !important;
+}
+
+#pf-filters .pf-filter-btn.active {
+    color: #ffffff !important;
+    background: #7c3aed !important;
+    border-color: #7c3aed !important;
+}

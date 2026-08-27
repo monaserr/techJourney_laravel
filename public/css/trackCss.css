@@ -1,0 +1,1048 @@
+:root {
+    --primary: #7c3aed;
+    --primary-dark: #5727c9;
+    --primary-light: #8b63f3;
+
+    --background: #f7f8fc;
+    --white: #ffffff;
+
+    --text: #18213a;
+    --text-light: #596174;
+    --muted: #858da0;
+
+    --border: #e5e7ef;
+
+    --purple-light: #eee9ff;
+
+    --shadow: 0 8px 30px rgba(34, 28, 70, 0.07);
+}
+
+
+/* ================= GENERAL ================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    background: var(--background);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Sora", sans-serif;
+}
+
+p {
+    color: var(--text-light);
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    padding-top: 130px;
+    padding-bottom: 28px;
+}
+
+.topPage {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--text);
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    max-width: 680px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-area {
+    margin-top: 30px;
+    max-width: 720px;
+}
+
+.search-box {
+    height: 58px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--white);
+    box-shadow: 0 5px 20px rgba(25, 32, 60, 0.05);
+    overflow: hidden;
+}
+
+.search-box:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.09);
+}
+
+.search-icon {
+    background: var(--white);
+    border: none;
+    font-size: 21px;
+    padding-left: 18px;
+}
+
+.search-box input {
+    border: none;
+    box-shadow: none !important;
+    font-size: 15px;
+    color: var(--text);
+}
+
+.search-box input:focus {
+    border: none;
+    outline: none;
+}
+
+
+/* ================= FILTER BUTTON ================= */
+
+.filter-btn {
+    height: 58px;
+    min-width: 105px;
+
+    border: 1px solid var(--border);
+    background: var(--white);
+
+    color: var(--text);
+
+    border-radius: 13px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    padding: 0 25px;
+
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--purple-light);
+}
+
+.filter-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.09);
+}
+
+
+/* ================= TRACKS SECTION ================= */
+
+.tracks-section {
+    padding-top: 18px;
+    padding-bottom: 40px;
+
+    /* نفس لون الصفحة */
+    background-color: transparent;
+}
+
+
+/* ================= CAREER TRACK BADGE ================= */
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    background: var(--purple-light);
+    color: var(--primary-dark);
+
+    padding: 8px 15px;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    margin-bottom: 22px;
+}
+
+.eyebrow .dot {
+    width: 7px;
+    height: 7px;
+
+    background: var(--primary);
+
+    border-radius: 50%;
+}
+
+
+/* ================= TRACK CARD ================= */
+
+.track-card {
+    height: 100%;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    transition: all 0.25s ease;
+}
+
+.track-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #d7ccfa;
+
+    box-shadow:
+        0 20px 40px rgba(89, 55, 170, 0.13);
+}
+
+
+/* ================= TRACK IMAGE ================= */
+
+.track-image {
+    width: 100%;
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #faf9ff,
+        #f3f0ff
+    );
+
+    overflow: hidden;
+}
+
+.track-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.track-card:hover .track-image img {
+    transform: scale(1.05);
+}
+
+
+/* ================= TRACK CONTENT ================= */
+
+.track-content {
+    padding: 20px 21px 22px;
+}
+
+.track-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+
+    margin-bottom: 9px;
+
+    color: var(--text);
+}
+
+.track-card .desc {
+    font-size: 13.5px;
+    line-height: 1.65;
+
+    margin-bottom: 17px;
+
+    min-height: 44px;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.trackcard-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Enroll */
+
+.enroll-track {
+    border: none;
+
+    background: var(--primary);
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.enroll-track:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 15px rgba(124, 58, 237, 0.25);
+}
+
+.enroll-track.enrolled {
+    background: #e8e1ff;
+
+    color: var(--primary-dark);
+
+    cursor: default;
+}
+
+.enroll-track:disabled {
+    opacity: 1;
+}
+
+
+/* ================= EXPLORE ================= */
+
+.track-explore-link {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    margin-left: auto;
+
+    background: #faf9ff;
+
+    color: var(--primary);
+
+    border: 1px solid var(--primary-light);
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: all 0.25s ease;
+
+    cursor: pointer;
+}
+
+.track-explore-link:hover {
+    color: var(--primary-dark);
+
+    background: var(--purple-light);
+
+    border-color: var(--primary);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 15px rgba(79, 70, 229, 0.15);
+}
+
+.track-explore-link span {
+    margin-left: 20px;
+
+    transition: transform 0.2s ease;
+}
+
+.track-explore-link:hover span {
+    transform: translateX(3px);
+}
+
+
+/* ================= ROADMAP BUTTON ================= */
+
+.roadmap {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 10px 15px;
+
+    margin-top: 20px;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: var(--primary);
+
+    border: 1px solid var(--primary-light);
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+
+    cursor: pointer;
+}
+
+.roadmap:hover {
+    background: #f3e8ff;
+
+    color: #6d28d9;
+
+    border-color: #8b5cf6;
+}
+
+.roadmap.active {
+    background: #f3e8ff;
+
+    color: #6d28d9;
+
+    border-color: #8b5cf6;
+}
+
+.roadmap-arrow {
+    font-size: 18px;
+
+    font-weight: 700;
+
+    transition: transform 0.25s ease;
+}
+
+.roadmap.active .roadmap-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* ================= ROADMAP WRAPPER ================= */
+
+.roadmap-wrapper {
+    background: #fbfaff;
+
+    border-top: 1px solid var(--border);
+
+    padding: 20px;
+}
+
+.roadmap-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.roadmap-heading h4 {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    color: var(--text);
+}
+
+.roadmap-heading span {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* ================= ROADMAP LIST ================= */
+
+.roadmap-list {
+    position: relative;
+}
+
+.roadmap-list::before {
+    content: "";
+
+    position: absolute;
+
+    left: 19px;
+
+    top: 20px;
+    bottom: 20px;
+
+    width: 2px;
+
+    background: #ddd6fe;
+}
+
+
+/* ================= ROADMAP STEP ================= */
+
+.roadmap-step {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    padding: 9px 5px;
+
+    border-radius: 12px;
+
+    transition: all 0.2s ease;
+}
+
+.roadmap-step:hover {
+    background: var(--white);
+
+    transform: translateX(3px);
+}
+
+
+/* Number */
+
+.step-number {
+    width: 30px;
+    height: 30px;
+
+    min-width: 30px;
+
+    border-radius: 50%;
+
+    background: var(--white);
+
+    border: 2px solid #c4b5fd;
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* Icon */
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f3efff;
+
+    color: var(--primary);
+
+    font-size: 18px;
+
+    flex-shrink: 0;
+}
+
+
+/* Information */
+
+.step-info {
+    flex: 1;
+
+    padding-top: 1px;
+}
+
+.step-title {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    color: var(--text);
+}
+
+.step-description {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    margin-top: 3px;
+}
+
+
+/* Arrow */
+
+.step-arrow {
+    align-self: center;
+
+    color: var(--primary);
+
+    font-size: 17px;
+
+    font-weight: 800;
+}
+
+
+/* ================= ROADMAP HINT ================= */
+
+.roadmap-hint {
+    margin-top: 14px;
+
+    padding: 10px 12px;
+
+    background: var(--purple-light);
+
+    border-radius: 10px;
+
+    color: var(--primary-dark);
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* ================= EMPTY MESSAGE ================= */
+
+.empty-message {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: var(--muted);
+}
+
+
+/* ================= COMPARE ================= */
+
+.compare-section {
+    margin-top: 25px;
+    margin-bottom: 60px;
+}
+
+.compare-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.compare-title h2 {
+    font-size: 22px;
+
+    margin: 0;
+
+    color: var(--text);
+}
+
+.compare-title span {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.compare-table {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    margin: 0;
+}
+
+.compare-table thead th {
+    background: var(--purple-light);
+
+    color: var(--primary);
+
+    font-family: "Sora", sans-serif;
+
+    font-size: 13px;
+
+    padding: 15px;
+}
+
+.compare-table tbody td {
+    color: var(--text-light);
+
+    padding: 15px;
+
+    font-size: 13.5px;
+}
+
+
+/* ================= SALARY BADGE ================= */
+
+.badge-avg {
+    display: inline-flex;
+
+    align-items: center;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    font-size: 12.5px;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 4px 12px rgba(124, 58, 237, 0.20);
+}
+
+
+/* ================= MODAL ================= */
+
+.student-modal {
+    text-align: center;
+
+    padding: 35px 25px;
+
+    border-radius: 20px;
+}
+
+.success-icon {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8e1ff;
+
+    color: var(--primary);
+
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.student-modal h3 {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.modal-action {
+    margin-top: 10px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding-top: 45px;
+    }
+
+    .topPage,
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .search-area {
+        max-width: 100%;
+    }
+
+    .track-image {
+        height: 200px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .topPage,
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .search-area {
+        flex-direction: column;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+
+    .trackcard-buttons {
+        flex-wrap: wrap;
+    }
+
+    .track-explore-link {
+        margin-left: 0;
+    }
+
+    .compare-title {
+        align-items: flex-start;
+
+        gap: 10px;
+
+        flex-direction: column;
+    }
+
+    .roadmap-wrapper {
+        padding: 15px;
+    }
+
+    .step-icon {
+        width: 35px;
+        height: 35px;
+        min-width: 35px;
+    }
+}
+
+
+
+/* =====================================================
+   TRACK SEARCH + FILTER
+===================================================== */
+
+.track-search-form {
+    width: 100%;
+    max-width: 720px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+/* Search */
+
+.track-search-box {
+    flex: 1;
+
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7ef;
+
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(25, 32, 60, 0.05);
+
+    transition: 0.25s ease;
+}
+
+.track-search-box:focus-within {
+    border-color: #7c3aed;
+
+    box-shadow:
+        0 0 0 4px rgba(124, 58, 237, 0.10);
+}
+
+
+.track-search-icon {
+    width: 55px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #858da0;
+
+    font-size: 18px;
+
+    flex-shrink: 0;
+}
+
+
+.track-search-box input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #18213a;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 14px;
+}
+
+
+.track-search-box input::placeholder {
+    color: #858da0;
+}
+
+
+/* Filter */
+
+.track-filter-button {
+    width: 110px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #e5e7ef !important;
+
+    border-radius: 13px !important;
+
+    background: #ffffff !important;
+
+    color: #18213a !important;
+
+    font-family: "Inter", sans-serif !important;
+
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    padding: 0 !important;
+
+    margin: 0 !important;
+
+    outline: none !important;
+
+    box-shadow: 0 5px 20px rgba(25, 32, 60, 0.05) !important;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.track-filter-button i {
+    font-size: 16px;
+}
+
+
+.track-filter-button:hover {
+    background: #eee9ff !important;
+
+    color: #7c3aed !important;
+
+    border-color: #7c3aed !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(124, 58, 237, 0.14) !important;
+}
+
+
+.track-filter-button:active {
+    transform: translateY(0);
+}
+
+
+.track-filter-button:focus {
+    outline: none !important;
+
+    border-color: #7c3aed !important;
+
+    box-shadow:
+        0 0 0 4px rgba(124, 58, 237, 0.10) !important;
+}
+
+
+/* Mobile */
+
+@media (max-width: 576px) {
+
+    .track-search-form {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        max-width: 100%;
+    }
+
+
+    .track-search-box {
+        width: 100%;
+    }
+
+
+    .track-filter-button {
+        width: 100%;
+
+        height: 55px;
+    }
+}
+
+
+/* Fix space below navbar on Tracks page */
+
+main.container {
+    padding-top: 100px !important;
+}
