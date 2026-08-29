@@ -10,7 +10,7 @@ class TrackEnrollment extends Model
     use HasFactory;
 
     protected $table = 'course_enrollments';
-
+    public $timestamps = false;
     protected $fillable = [
         'user_id',
         'course_id',

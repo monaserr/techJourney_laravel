@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Tech Journey</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/Screenshot 2026-08-29 174721.png') }}">
 
     {{-- Bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +20,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
-<body >
+<body class="animated-page">
 
     {{-- Navbar --}}
     @include('includes.navbar')
@@ -47,7 +48,7 @@
 
                     <div class="hero-button">
 
-                        <a href="#" class="hero-btn">
+                        <a href="{{ route('tracks') }}" class="hero-btn">
                             Explore Tracks
                         </a>
 
@@ -309,11 +310,10 @@
 
             <div class="text-center mt-5">
 
-                <a href="#" class="explore-btn">
-
+                <a href="{{ route('tracks') }}" class="explore-btn">
                     Explore All Tracks
-
                     <i class="bi bi-arrow-right"></i>
+                </a>
 
                 </a>
 
@@ -563,7 +563,7 @@
                 </div>
 
 
-                <a href="#" class="btn btn-light assessment-btn">
+                <a href="{{ route('login') }}" class="btn btn-light assessment-btn">
 
                     Start Journey →
 
@@ -615,7 +615,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-
+    <script src="{{ asset('js/script.js') }}"></script>
 
     {{-- ================= ENROLL ================= --}}
 

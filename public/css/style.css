@@ -55,6 +55,31 @@
     var(--color-banner-2),
     var(--color-banner-3)
   );
+
+
+
+  /* ================================
+   DARK MODE
+================================ */
+
+body.dark-mode {
+  --color-text-dark: #f8fafc;
+  --color-text-gray: #cbd5e1;
+  --color-text-gray-alt: #94a3b8;
+
+  --color-bg-white: #1e293b;
+  --color-bg-light: #0f172a;
+  --color-bg-badge: #312e81;
+  --color-bg-tag: #334155;
+
+  --color-border: #334155;
+  --color-border-hover: #8b5cf6;
+
+  --shadow-purple-light: rgba(139, 92, 246, 0.15);
+  --shadow-purple-medium: rgba(139, 92, 246, 0.25);
+
+  --color-banner-hover-bg: #312e81;
+}
 }
 
 /* RESPONSIVE */
@@ -237,7 +262,20 @@ section {
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2879, 70, 229, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+.theme-toggle {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: 0.25s ease;
+}
 
+.theme-toggle:hover {
+    background: var(--color-bg-badge);
+    transform: rotate(15deg);
+}
 /* Mobile Navbar */
 @media (max-width: 768px) {
   .navbar-toggler {

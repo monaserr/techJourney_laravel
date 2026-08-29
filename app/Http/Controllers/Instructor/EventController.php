@@ -12,19 +12,21 @@ class EventController extends Controller
     public function create()
     {
         $events = Event::latest()->get();
-        return view('instructors.events.create', compact('events'));
+
+        return view('instructors.events.create', compact('events'))
+            ->with('pageTitle', 'Events');
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title'         => 'required|string|max:255',
-            'description'   => 'required|string',
-            'location'      => 'required|string|max:255',
-            'category'      => 'required|string|max:255',
-            'price'         => 'required|numeric|min:0',
-            'event_date'    => 'required|date',
-            'image'         => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'location' => 'required|string|max:255',
+            'category' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'event_date' => 'required|date',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
         if ($request->hasFile('image')) {
@@ -40,19 +42,20 @@ class EventController extends Controller
 
     public function edit(Event $event)
     {
-        return view('instructors.events.edit', compact('event'));
+        return view('instructors.events.edit', compact('event'))
+            ->with('pageTitle', 'Events');
     }
 
     public function update(Request $request, Event $event)
     {
         $validated = $request->validate([
-            'title'         => 'required|string|max:255',
-            'description'   => 'required|string',
-            'location'      => 'required|string|max:255',
-            'category'      => 'required|string|max:255',
-            'price'         => 'required|numeric|min:0',
-            'event_date'    => 'required|date',
-            'image'         => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'location' => 'required|string|max:255',
+            'category' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'event_date' => 'required|date',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
         if ($request->hasFile('image')) {

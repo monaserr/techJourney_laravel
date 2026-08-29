@@ -142,3 +142,116 @@ body {
     margin-right: 12px;
   }
 }
+/* =========================================
+   RESOURCES PAGE ANIMATIONS
+========================================= */
+
+/* الحالة الأولية */
+.pf-page-title,
+.pf-page-subtitle,
+.pf-filter-btn,
+.pf-group-title,
+.pf-resource-row {
+    opacity: 0;
+}
+
+/* Page Title */
+.pf-page-title {
+    transform: translateY(-30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* Subtitle */
+.pf-page-subtitle {
+    transform: translateY(20px);
+    transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
+}
+
+/* Filter Buttons */
+.pf-filter-btn {
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Group Titles */
+.pf-group-title {
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Resource Rows */
+.pf-resource-row {
+    transform: translateY(35px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        box-shadow 0.15s ease;
+}
+
+
+/* =========================================
+   SHOW ANIMATION
+========================================= */
+
+.pf-page-title.show,
+.pf-page-subtitle.show,
+.pf-filter-btn.show,
+.pf-group-title.show,
+.pf-resource-row.show {
+    opacity: 1;
+    transform: translate(0);
+}
+
+
+/* =========================================
+   STAGGER FOR FILTERS
+========================================= */
+
+.pf-filter-btn:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.pf-filter-btn:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.pf-filter-btn:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.pf-filter-btn:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.pf-filter-btn:nth-child(5) {
+    transition-delay: 0.25s;
+}
+
+
+/* =========================================
+   STAGGER RESOURCE ROWS
+========================================= */
+
+.pf-resource-row:nth-of-type(1) {
+    transition-delay: 0.05s;
+}
+
+.pf-resource-row:nth-of-type(2) {
+    transition-delay: 0.1s;
+}
+
+.pf-resource-row:nth-of-type(3) {
+    transition-delay: 0.15s;
+}
+
+.pf-resource-row:nth-of-type(4) {
+    transition-delay: 0.2s;
+}
+
+.pf-resource-row:nth-of-type(5) {
+    transition-delay: 0.25s;
+}
+
+.pf-resource-row:nth-of-type(6) {
+    transition-delay: 0.3s;
+}

@@ -711,3 +711,108 @@
   opacity: 0.92;
   transform: translateY(-1px);
 }
+/* =========================================
+   EVENTS PAGE ANIMATIONS
+========================================= */
+
+/* Initial hidden state */
+
+.evt-title,
+.evt-filter-btn,
+.evt-card-item {
+  opacity: 0;
+}
+
+
+/* Title Animation */
+
+.evt-title {
+  transform: translateY(-30px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+
+/* Filter Buttons Animation */
+
+.evt-filter-btn {
+  transform: translateY(25px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+
+/* Event Cards Animation */
+
+.evt-card-item {
+  transform: translateY(45px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+
+/* Show Animation */
+
+.evt-title.show,
+.evt-filter-btn.show,
+.evt-card-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   FILTER BUTTON STAGGER
+========================================= */
+
+.evt-filter-btn:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.evt-filter-btn:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.evt-filter-btn:nth-child(3) {
+  transition-delay: 0.15s;
+}
+
+.evt-filter-btn:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+.evt-filter-btn:nth-child(5) {
+  transition-delay: 0.25s;
+}
+
+
+/* =========================================
+   EVENT CARDS STAGGER
+========================================= */
+
+.evt-card-item:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.evt-card-item:nth-child(2) {
+  transition-delay: 0.12s;
+}
+
+.evt-card-item:nth-child(3) {
+  transition-delay: 0.19s;
+}
+
+.evt-card-item:nth-child(4) {
+  transition-delay: 0.26s;
+}
+
+.evt-card-item:nth-child(5) {
+  transition-delay: 0.33s;
+}
+
+.evt-card-item:nth-child(6) {
+  transition-delay: 0.4s;
+}

@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\CourseEnrollment;
+use App\Models\Track;
 
 class User extends Authenticatable
 {
@@ -58,4 +59,39 @@ class User extends Authenticatable
             'user_id'
         );
     }
+
+    public function enrolledTracks()
+    {
+        return $this->belongsToMany(
+            Track::class,
+            'course_enrollments',
+            'user_id',
+            'course_id'
+        );
+    }
+
+    public function bookedEvents()
+{
+    return $this->belongsToMany(
+        Event::class,
+        'event_registrations',
+        'user_id',
+        'event_id'
+    );
+}
+
+public function fullName()
+{
+    return trim($this->first_name.' '.$this->last_name);
+}
+
+public function initials()
+{
+    return strtoupper(substr($this->first_name, 0, 1).substr($this->last_name, 0, 1));
+}
+
+public function events()
+{
+    return $this->hasMany(Event::class, 'instructor_id');
+}
 }

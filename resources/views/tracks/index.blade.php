@@ -6,7 +6,6 @@
 
 <main class="tracks-page">
 
-    {{-- ================= HERO ================= --}}
 
     <section class="hero">
 
@@ -52,7 +51,7 @@
     </section>
 
 
-    {{-- ================= TRACKS ================= --}}
+
 
     <section class="tracks-section">
 

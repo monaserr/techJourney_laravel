@@ -48,6 +48,6 @@ class ResourceController extends Controller
             'initialStep',
             'courses',
             'resources'
-        ));
+        ))->with('pageTitle', 'Resources');
     }
 }

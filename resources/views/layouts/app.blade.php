@@ -6,26 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $pageTitle ?? 'Tech Journey' }} | Tech Journey</title>
+    <title>{{ isset($pageTitle) ? $pageTitle . ' | Tech Journey' : 'Tech Journey' }}</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/Screenshot 2026-08-29 174721.png') }}">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     {{-- Main CSS --}}
-    <link rel="stylesheet"
-        href="{{ asset('css/style.css') }}?v={{ filemtime(public_path('css/style.css')) }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ filemtime(public_path('css/style.css')) }}">
 
     {{-- Tracks CSS --}}
     @if (request()->routeIs('tracks'))
-        <link rel="stylesheet"
-            href="{{ asset('css/trackCss.css') }}?v={{ filemtime(public_path('css/trackCss.css')) }}">
+        <link rel="stylesheet" href="{{ asset('css/trackCss.css') }}?v={{ filemtime(public_path('css/trackCss.css')) }}">
     @endif
 
     {{-- Events CSS --}}
     @if (
-        request()->routeIs('student.events.*') ||
-        request()->routeIs('instructor.events.*')
-    )
+            request()->routeIs('student.events.*') ||
+            request()->routeIs('instructor.events.*')
+        )
         <link rel="stylesheet"
             href="{{ asset('css/event_istructor_style.css') }}?v={{ filemtime(public_path('css/event_istructor_style.css')) }}">
     @endif
@@ -38,11 +37,10 @@
 
     {{-- Profile CSS --}}
     @if (
-        request()->routeIs('profile') ||
-        request()->routeIs('edit_profile')
-    )
-        <link rel="stylesheet"
-            href="{{ asset('css/profile.css') }}?v={{ filemtime(public_path('css/profile.css')) }}">
+            request()->routeIs('profile') ||
+            request()->routeIs('edit_profile')
+        )
+        <link rel="stylesheet" href="{{ asset('css/profile.css') }}?v={{ filemtime(public_path('css/profile.css')) }}">
     @endif
 
     {{-- Edit Profile CSS --}}

@@ -9,315 +9,239 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Contact Us - Tech Journey</title>
+    <title>Contact Us | Tech Journey</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/Screenshot 2026-08-29 174721.png') }}">
 
     <!-- Bootstrap -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Main CSS -->
-    <link
-        rel="stylesheet"
-        href="{{ asset('css/style.css') }}"
-    >
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <!-- Google Font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
 
     <style>
-
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #ffffff;
+            background-color: var(--color-bg-white);
             margin: 0;
+            color: var(--color-text-dark);
         }
-
 
         .contact-page {
-
-            background-color: #F8FAFC;
-
+            background-color: var(--color-bg-light);
             min-height: 60vh;
-
-            padding: 70px 20px;
-
+            padding: 110px 20px 70px;
         }
-
 
         .contact-container {
-
             max-width: 900px;
-
             margin: auto;
-
         }
 
-
+        /* Title */
         .contact-title {
-
             text-align: center;
-
             margin-bottom: 40px;
-
         }
-
 
         .contact-title h1 {
-
-            color: #1E3A8A;
-
-            font-size: 32px;
-
-            font-weight: 700;
-
+            background: var(--gradient-title);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 36px;
+            font-weight: 800;
             margin-bottom: 8px;
-
         }
-
 
         .contact-title p {
-
-            color: #64748B;
-
+            color: var(--color-text-gray);
             margin: 0;
-
         }
 
-
+        /* Main Card */
         .contact-card {
-
-            background: #FFFFFF;
-
-            border-radius: 15px;
-
+            background: var(--color-bg-white);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
             padding: 35px;
-
-            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
-
+            box-shadow: 0 15px 40px var(--shadow-purple-light);
         }
 
-
+        /* Contact Info */
         .contact-info {
-
-            background: #FFFFFF;
-
-            border-radius: 12px;
-
-            padding: 25px;
-
+            background: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            border-radius: 18px;
+            padding: 30px;
             height: 100%;
-
-            box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
-
+            transition: 0.3s ease;
         }
 
+        .contact-info:hover {
+            border-color: var(--color-border-hover);
+            box-shadow: 0 10px 30px var(--shadow-purple-light);
+        }
 
         .contact-info h3 {
-
-            color: #1E3A8A;
-
-            font-size: 20px;
-
+            color: var(--color-text-dark);
+            font-size: 22px;
             font-weight: 700;
-
             margin-bottom: 25px;
-
         }
-
 
         .contact-item {
-
             display: flex;
-
             align-items: flex-start;
-
             gap: 12px;
-
-            margin-bottom: 20px;
-
+            margin-bottom: 22px;
         }
-
 
         .contact-item i {
-
-            color: #2563EB;
-
-            font-size: 20px;
-
+            color: var(--color-primary);
+            font-size: 21px;
         }
-
 
         .contact-item strong {
-
             display: block;
-
-            color: #0F172A;
-
+            color: var(--color-text-dark);
             margin-bottom: 3px;
-
         }
-
 
         .contact-item span {
-
-            color: #64748B;
-
+            color: var(--color-text-gray);
             font-size: 14px;
-
         }
 
+        /* Social Buttons */
+        .contact-info .btn-light {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
+            background: var(--color-bg-white);
+            color: var(--color-primary);
+
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+
+            transition: 0.3s ease;
+        }
+
+        .contact-info .btn-light:hover {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px var(--shadow-purple-medium);
+        }
+
+        /* Form */
         .contact-form {
-
-            background: #FFFFFF;
-
-            border-radius: 12px;
-
-            padding: 25px;
-
+            background: var(--color-bg-white);
+            border: 1px solid var(--color-border);
+            border-radius: 18px;
+            padding: 30px;
             height: 100%;
-
-            box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
-
         }
-
 
         .contact-form label {
-
-            color: #0F172A;
-
+            color: var(--color-text-dark);
             font-weight: 600;
-
             margin-bottom: 7px;
-
         }
-
 
         .contact-form .form-control {
-
-            border: 1px solid #E2E8F0;
-
-            border-radius: 8px;
-
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
             padding: 11px 14px;
-
+            color: var(--color-text-dark);
+            transition: 0.3s ease;
         }
 
+        .contact-form .form-control::placeholder {
+            color: #94a3b8;
+        }
 
         .contact-form .form-control:focus {
-
-            border-color: #2563EB;
-
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
-
+            border-color: var(--color-primary-light);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
         }
-
 
         .contact-form textarea {
-
             min-height: 130px;
-
             resize: vertical;
-
         }
 
-
+        /* Send Button */
         .send-btn {
-
             width: 100%;
-
             border: none;
+            border-radius: 10px;
+            padding: 13px;
 
-            border-radius: 8px;
-
-            padding: 12px;
-
-            background-color: #2563EB;
-
-            color: #FFFFFF;
+            background: var(--gradient-primary);
+            color: #ffffff;
 
             font-weight: 600;
-
-            transition: 0.3s;
-
+            transition: 0.3s ease;
         }
-
 
         .send-btn:hover {
-
-            background-color: #1E3A8A;
-
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px var(--shadow-purple-medium);
         }
 
-
+        /* Success Message */
         .success-message {
-
-            background-color: #ECFDF5;
-
-            border: 1px solid #A7F3D0;
-
-            color: #047857;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #15803d;
 
             padding: 12px 15px;
-
-            border-radius: 8px;
-
+            border-radius: 10px;
             margin-bottom: 20px;
-
         }
 
-
+        /* Error Message */
         .error-message {
-
-            background-color: #FEF2F2;
-
-            border: 1px solid #FECACA;
-
-            color: #B91C1C;
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #b91c1c;
 
             padding: 12px 15px;
-
-            border-radius: 8px;
-
+            border-radius: 10px;
             margin-bottom: 20px;
-
         }
 
-
+        /* Responsive */
         @media (max-width: 768px) {
 
             .contact-page {
-
-                padding: 40px 15px;
-
+                padding: 100px 15px 50px;
             }
 
             .contact-card {
-
                 padding: 20px;
+            }
 
+            .contact-info,
+            .contact-form {
+                padding: 22px;
             }
 
             .contact-title h1 {
-
-                font-size: 27px;
-
+                font-size: 30px;
             }
-
         }
-
     </style>
 
 </head>
@@ -430,34 +354,22 @@
 
                             <div class="d-flex gap-2">
 
-                                <a
-                                    href="#"
-                                    class="btn btn-light"
-                                >
+                                <a href="#" class="btn btn-light">
                                     <i class="bi bi-facebook"></i>
                                 </a>
 
 
-                                <a
-                                    href="#"
-                                    class="btn btn-light"
-                                >
+                                <a href="#" class="btn btn-light">
                                     <i class="bi bi-twitter-x"></i>
                                 </a>
 
 
-                                <a
-                                    href="#"
-                                    class="btn btn-light"
-                                >
+                                <a href="#" class="btn btn-light">
                                     <i class="bi bi-linkedin"></i>
                                 </a>
 
 
-                                <a
-                                    href="#"
-                                    class="btn btn-light"
-                                >
+                                <a href="#" class="btn btn-light">
                                     <i class="bi bi-instagram"></i>
                                 </a>
 
@@ -510,10 +422,7 @@
 
 
 
-                            <form
-                                method="POST"
-                                action="{{ route('contact.send') }}"
-                            >
+                            <form method="POST" action="{{ route('contact.send') }}">
 
                                 @csrf
 
@@ -525,14 +434,8 @@
                                         Your Name
                                     </label>
 
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        class="form-control"
-                                        placeholder="Your Name"
-                                        value="{{ old('name') }}"
-                                        required
-                                    >
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                        value="{{ old('name') }}" required>
 
                                 </div>
 
@@ -545,14 +448,8 @@
                                         Your Email
                                     </label>
 
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        class="form-control"
-                                        placeholder="Your Email"
-                                        value="{{ old('email') }}"
-                                        required
-                                    >
+                                    <input type="email" name="email" class="form-control" placeholder="Your Email"
+                                        value="{{ old('email') }}" required>
 
                                 </div>
 
@@ -565,14 +462,8 @@
                                         Subject
                                     </label>
 
-                                    <input
-                                        type="text"
-                                        name="subject"
-                                        class="form-control"
-                                        placeholder="Subject"
-                                        value="{{ old('subject') }}"
-                                        required
-                                    >
+                                    <input type="text" name="subject" class="form-control" placeholder="Subject"
+                                        value="{{ old('subject') }}" required>
 
                                 </div>
 
@@ -585,22 +476,15 @@
                                         Your Message
                                     </label>
 
-                                    <textarea
-                                        name="message"
-                                        class="form-control"
-                                        placeholder="Your Message"
-                                        required
-                                    >{{ old('message') }}</textarea>
+                                    <textarea name="message" class="form-control" placeholder="Your Message"
+                                        required>{{ old('message') }}</textarea>
 
                                 </div>
 
 
 
                                 {{-- Submit --}}
-                                <button
-                                    type="submit"
-                                    class="send-btn"
-                                >
+                                <button type="submit" class="send-btn">
                                     Send Message
                                 </button>
 
@@ -627,8 +511,7 @@
 
 
     <!-- Bootstrap JS -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
     </script>
 
 

@@ -9,6 +9,7 @@ use App\Http\Controllers\Instructor\EventController as InstructorEventController
 use App\Http\Controllers\Student\EventController as StudentEventController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', [IndexController::class, 'index'])
     ->name('index');
@@ -65,8 +66,23 @@ Route::post('/contact', function (Request $request) {
 
 })->name('contact.send');
 
-Route::get('/profile-fake', fn() => view('welcome'))
-    ->name('profile');
+Route::middleware('auth')->group(function () {
+
+    Route::get('/profile', [ProfileController::class, 'index'])
+        ->name('profile');
+
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])
+        ->name('edit_profile');
+
+    Route::post('/profile', [ProfileController::class, 'update'])
+        ->name('profile.update');
+
+    Route::post('/profile/tracks/unenroll', [ProfileController::class, 'unenrollTrack'])
+        ->name('profile.tracks.unenroll');
+
+    Route::post('/profile/events/cancel', [ProfileController::class, 'cancelEvent'])
+        ->name('profile.events.cancel');
+});
 
 
 Route::get('/register', [RegisterController::class, 'show'])

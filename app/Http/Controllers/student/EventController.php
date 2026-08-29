@@ -25,7 +25,7 @@ class EventController extends Controller
         return view('students.events.index', compact(
             'events',
             'registeredEventIds'
-        ));
+        ))->with('pageTitle', 'Events');
     }
 
     public function register(Request $request)

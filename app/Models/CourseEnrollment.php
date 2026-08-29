@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class CourseEnrollment extends Model
 {
     protected $table = 'course_enrollments';
-
+    public $timestamps = false;  
     protected $fillable = [
         'user_id',
         'course_id',

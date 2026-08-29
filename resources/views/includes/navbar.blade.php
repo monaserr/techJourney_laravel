@@ -64,7 +64,7 @@
             <div class="student-nav-account student-nav-account-right">
                 <a href="{{ route('profile') }}" class="student-nav-avatar" aria-label="My Profile">
                     @if (auth()->user()->image)
-                        <img src="{{ asset(auth()->user()->image) }}" alt="Profile">
+                        <img src="{{ asset('storage/' . auth()->user()->image) }}" alt="Profile">
                     @else
                         <span>{{ auth()->user()->initials() ?: 'U' }}</span>
                     @endif
