@@ -9,19 +9,46 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('name');
-            $table->string('first_name')->after('id');
-            $table->string('last_name')->after('first_name');
-            $table->string('image')->nullable()->after('password');
-            $table->string('role')->default('student')->after('image');
+            if (Schema::hasColumn('users', 'name')) {
+                $table->dropColumn('name');
+            }
+
+            if (!Schema::hasColumn('users', 'first_name')) {
+                $table->string('first_name')->nullable()->after('id');
+            }
+
+            if (!Schema::hasColumn('users', 'last_name')) {
+                $table->string('last_name')->nullable()->after('first_name');
+            }
+
+            if (!Schema::hasColumn('users', 'image')) {
+                $table->string('image')->nullable()->after('password');
+            }
+
+            if (!Schema::hasColumn('users', 'role')) {
+                $table->string('role')->default('student')->after('image');
+            }
         });
     }
 
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['first_name', 'last_name', 'image', 'role']);
-            $table->string('name')->after('id');
+            if (Schema::hasColumn('users', 'first_name')) {
+                $table->dropColumn('first_name');
+            }
+            if (Schema::hasColumn('users', 'last_name')) {
+                $table->dropColumn('last_name');
+            }
+            if (Schema::hasColumn('users', 'image')) {
+                $table->dropColumn('image');
+            }
+            if (Schema::hasColumn('users', 'role')) {
+                $table->dropColumn('role');
+            }
+            if (!Schema::hasColumn('users', 'name')) {
+                $table->string('name')->after('id');
+            }
         });
     }
 };

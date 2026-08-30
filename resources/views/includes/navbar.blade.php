@@ -3,9 +3,10 @@
 
         <!-- Logo -->
         <div class="navbar-left-group">
-            <a href="{{ route('index') }}" class="logo">
-                <img src="{{ asset('images/logo without background.png') }}" alt="Tech Journey">
-            </a>
+     <a href="{{ route('index') }}" class="logo">
+    <img src="{{ asset('images/logo without background.png') }}" alt="Tech Journey" class="logo-light">
+    <img src="{{ asset('images/logo-dark-mode.png copy.png') }}" alt="Tech Journey" class="logo-dark">
+</a>
         </div>
 
         <!-- Mobile Toggle -->
@@ -16,6 +17,8 @@
 
         <!-- Navigation -->
         <ul class="nav-links collapse" id="navLinks">
+
+            
 
             <li>
                 <a href="{{ route('index') }}" class="{{ request()->routeIs('index') ? 'active' : '' }}">
@@ -34,6 +37,8 @@
                     Resources
                 </a>
             </li>
+
+
 
             @php
                 $eventsLink = auth()->check() && auth()->user()->isInstructor()
@@ -54,14 +59,55 @@
                 </a>
             </li>
 
-            @unless (auth()->check() && in_array(auth()->user()->role, ['student', 'instructor'], true))
-                <li id="navLoginItem"><a href="{{ route('login') }}" class="login-btn">Login</a></li>
-            @endunless
 
-        </ul>
 
-        @if (auth()->check() && in_array(auth()->user()->role, ['student', 'instructor'], true))
+             
+                      <li id="navLoginItem" class="nav-right-group">
+               <button id="themeToggle" class="theme-toggle-pill" type="button" aria-label="Toggle dark mode">
+                    <span class="theme-toggle-thumb">
+                        <svg class="theme-icon-light" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="theme-icon-dark" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                        </svg>
+                    </span>
+                </button>
+
+                @unless (auth()->check() && in_array(auth()->user()->role, ['student', 'instructor'], true))
+                    <a href="{{ route('login') }}" class="login-btn">Login</a>
+                @endunless
+            </li>
+
+                @if (auth()->check() && in_array(auth()->user()->role, ['student', 'instructor'], true))
             <div class="student-nav-account student-nav-account-right">
+               <button id="themeToggleStudent" class="theme-toggle-pill" type="button" aria-label="Toggle dark mode">
+                    <span class="theme-toggle-thumb">
+                        <svg class="theme-icon-light" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="theme-icon-dark" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                        </svg>
+                    </span>
+                </button>
+
                 <a href="{{ route('profile') }}" class="student-nav-avatar" aria-label="My Profile">
                     @if (auth()->user()->image)
                         <img src="{{ asset('storage/' . auth()->user()->image) }}" alt="Profile">
@@ -71,7 +117,9 @@
                 </a>
                 <form action="{{ route('logout') }}" method="post" class="d-inline">
                     @csrf
-                    <button type="submit" class="student-logout" style="background:none;border:none;">Logout</button>
+                    <button type="submit" class="student-logout">
+    Logout
+</button>
                 </form>
             </div>
         @endif

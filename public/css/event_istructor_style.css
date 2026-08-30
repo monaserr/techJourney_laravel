@@ -647,9 +647,6 @@
   padding: 35px !important;
 }
 
-.evt-edit-form-card h2 {
-  margin-bottom: 30px !important;
-}
 
 .evt-edit-form-card .form-label {
   display: block;
@@ -815,4 +812,562 @@
 
 .evt-card-item:nth-child(6) {
   transition-delay: 0.4s;
+}
+
+
+
+/* =========================================================
+   EVENTS PAGE - DARK MODE
+========================================================= */
+
+body.dark-mode .evt-page-wrapper .evt-title {
+  color: var(--color-text-dark) !important;
+}
+
+body.dark-mode .evt-page-wrapper .text-purple {
+  color: var(--color-primary) !important;
+}
+
+
+/* =========================
+   EVENT CARDS
+========================= */
+
+body.dark-mode .evt-card-item .form-card {
+  background: var(--color-bg-white) !important;
+  border-color: var(--color-border) !important;
+}
+
+body.dark-mode .evt-card-item .card-body {
+  background: var(--color-bg-white) !important;
+}
+
+body.dark-mode .evt-card-item .card-title,
+body.dark-mode .evt-card-item .card-title.text-dark {
+  color: var(--color-text-dark) !important;
+}
+
+body.dark-mode .evt-card-item .card-text,
+body.dark-mode .evt-card-item .text-muted,
+body.dark-mode .evt-card-item small.text-muted {
+  color: var(--color-text-gray) !important;
+}
+
+body.dark-mode .evt-card-item .card-body strong {
+  color: var(--color-text-dark) !important;
+}
+
+
+/* =========================
+   FILTER BUTTONS
+========================= */
+
+body.dark-mode .evt-filter-btn {
+  background: var(--color-bg-white) !important;
+  color: var(--color-text-gray) !important;
+  border-color: var(--color-border) !important;
+}
+
+body.dark-mode .evt-filter-btn:hover {
+  background: #f3e8ff !important;
+  color: #7c3aed !important;
+  border-color: #d8b4fe !important;
+}
+
+body.dark-mode .evt-filter-btn.active {
+  color: #ffffff !important;
+}
+
+
+/* =========================
+   ADD / EDIT EVENT FORMS
+========================= */
+
+body.dark-mode .evt-form-card,
+body.dark-mode .evt-add-form-card,
+body.dark-mode .evt-edit-form-card {
+  background: var(--color-bg-white) !important;
+  border-color: var(--color-border) !important;
+}
+
+body.dark-mode .evt-form-title,
+body.dark-mode .evt-add-form-card h2 {
+  background: linear-gradient(90deg, #6366F1, #A855F7, #8B5CF6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark-mode .evt-page-wrapper .form-label,
+body.dark-mode .evt-add-form-card .form-label,
+body.dark-mode .evt-edit-form-card .form-label {
+  color: var(--color-text-dark) !important;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+body.dark-mode .evt-page-wrapper .form-control,
+body.dark-mode .evt-page-wrapper .form-select,
+body.dark-mode .evt-add-form-card .form-control,
+body.dark-mode .evt-edit-form-card .form-control {
+  background: var(--color-bg-white) !important;
+  color: var(--color-text-dark) !important;
+  border-color: var(--color-border) !important;
+}
+
+body.dark-mode .evt-page-wrapper .form-control::placeholder {
+  color: var(--color-text-gray) !important;
+}
+
+
+/* =========================
+   FILE UPLOAD
+========================= */
+
+body.dark-mode .file-name {
+  background-color: var(--color-bg-white) !important;
+  color: var(--color-text-gray) !important;
+  border-color: var(--color-border) !important;
+}
+
+body.dark-mode .file-name.selected {
+  color: var(--color-primary) !important;
+  background-color: #f5f3ff !important;
+  border-color: #ddd6fe !important;
+}
+
+body.dark-mode .file-note {
+  color: var(--color-text-gray) !important;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+body.dark-mode #bookingModal .modal-content {
+  background: var(--color-bg-white) !important;
+}
+
+body.dark-mode #bookingModal .modal-body {
+  background: var(--color-bg-white) !important;
+}
+
+body.dark-mode #bookingModal .modal-title {
+  color: #ffffff !important;
+}
+
+body.dark-mode #bookingModal .bg-light {
+  background: var(--color-bg-white) !important;
+  border-color: var(--color-border) !important;
+}
+
+body.dark-mode #bookingModal #modalEventName {
+  color: var(--color-text-dark) !important;
+}
+
+body.dark-mode #bookingModal .text-muted,
+body.dark-mode #bookingModal p.text-muted {
+  color: var(--color-text-gray) !important;
+}
+
+body.dark-mode #bookingModal .bg-light strong {
+  color: var(--color-text-dark) !important;
+}
+
+
+/* =========================
+   SUCCESS MODAL
+========================= */
+
+body.dark-mode #bookingSuccessModal .modal-content.student-modal {
+  background: var(--color-bg-white) !important;
+}
+
+body.dark-mode #bookingSuccessModal h3 {
+  color: var(--color-text-dark) !important;
+}
+
+body.dark-mode #bookingSuccessModal p {
+  color: var(--color-text-gray) !important;
+}
+
+
+/* =========================
+   CANCEL BUTTON
+========================= */
+
+body.dark-mode .evt-edit-form-card .btn-outline-secondary {
+  color: var(--color-text-gray) !important;
+  border-color: var(--color-border) !important;
+}
+
+body.dark-mode .evt-edit-form-card .btn-outline-secondary:hover {
+  color: var(--color-primary) !important;
+}
+
+
+/* =========================
+   EMPTY / ALERT TEXT
+========================= */
+
+body.dark-mode .evt-page-wrapper .alert {
+  color: var(--color-text-dark);
+}
+
+body.dark-mode .evt-page-wrapper .text-muted {
+  color: var(--color-text-gray) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   EVENTS PAGE - IMPROVED DARK MODE COLORS
+========================================================= */
+
+body.dark-mode .evt-page-wrapper .evt-title {
+    color: #f8fafc !important;
+}
+
+body.dark-mode .evt-page-wrapper .text-purple {
+    color: #a78bfa !important;
+}
+
+/* =========================
+   FILTER BUTTONS
+========================= */
+
+body.dark-mode .evt-filter-btn {
+    background: #1e293b !important;
+    color: #cbd5e1 !important;
+    border-color: #475569 !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .evt-filter-btn:hover {
+    background: #312e81 !important;
+    color: #c4b5fd !important;
+    border-color: #8b5cf6 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(139, 92, 246, 0.2);
+}
+
+body.dark-mode .evt-filter-btn.active {
+    background: linear-gradient(135deg, #7c3aed, #8b5cf6) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 6px 18px rgba(139, 92, 246, 0.3);
+}
+
+
+/* =========================
+   EVENT CARDS
+========================= */
+
+body.dark-mode .evt-card-item .form-card {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+body.dark-mode .evt-card-item .form-card:hover {
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.18) !important;
+}
+
+body.dark-mode .evt-card-item .card-body {
+    background: #1e293b !important;
+}
+
+body.dark-mode .evt-card-item .card-title,
+body.dark-mode .evt-card-item .card-title.text-dark {
+    color: #f8fafc !important;
+}
+
+body.dark-mode .evt-card-item .card-text,
+body.dark-mode .evt-card-item .text-muted,
+body.dark-mode .evt-card-item small.text-muted {
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .evt-card-item .card-body strong {
+    color: #f8fafc !important;
+}
+
+
+/* =========================
+   EVENT BADGE
+========================= */
+
+body.dark-mode .evt-card-item .badge.bg-secondary {
+    background: #312e81 !important;
+    color: #c4b5fd !important;
+    border: 1px solid #4c1d95 !important;
+}
+
+
+/* =========================
+   PURPLE TEXT
+========================= */
+
+body.dark-mode .evt-card-item .card-body > .text-purple {
+    color: #a78bfa !important;
+}
+
+
+/* =========================
+   FORM CARDS
+========================= */
+
+body.dark-mode .evt-form-card,
+body.dark-mode .evt-add-form-card,
+body.dark-mode .evt-edit-form-card {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .evt-form-title,
+body.dark-mode .evt-add-form-card h2 {
+    color: #f8fafc !important;
+}
+
+
+
+body.dark-mode .evt-page-wrapper .form-label,
+body.dark-mode .evt-add-form-card .form-label,
+body.dark-mode .evt-edit-form-card .form-label {
+    color: #e2e8f0 !important;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+body.dark-mode .evt-page-wrapper .form-control,
+body.dark-mode .evt-page-wrapper .form-select,
+body.dark-mode .evt-add-form-card .form-control,
+body.dark-mode .evt-edit-form-card .form-control {
+    background: #0f172a !important;
+    color: #f8fafc !important;
+    border-color: #475569 !important;
+}
+
+body.dark-mode .evt-page-wrapper .form-control::placeholder {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode .evt-page-wrapper .form-control:focus,
+body.dark-mode .evt-page-wrapper .form-select:focus,
+body.dark-mode .evt-add-form-card .form-control:focus,
+body.dark-mode .evt-edit-form-card .form-control:focus {
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15) !important;
+}
+
+
+/* =========================
+   FILE UPLOAD
+========================= */
+
+body.dark-mode .file-name {
+    background-color: #0f172a !important;
+    color: #cbd5e1 !important;
+    border-color: #475569 !important;
+}
+
+body.dark-mode .file-name.selected {
+    color: #c4b5fd !important;
+    background-color: #312e81 !important;
+    border-color: #8b5cf6 !important;
+}
+
+body.dark-mode .file-note {
+    color: #94a3b8 !important;
+}
+
+
+/* =========================
+   OUTLINE PURPLE BUTTON
+========================= */
+
+body.dark-mode .btn-outline-purple {
+    color: #c4b5fd !important;
+    border-color: #8b5cf6 !important;
+    background: transparent !important;
+}
+
+body.dark-mode .btn-outline-purple:hover {
+    background: #7c3aed !important;
+    color: #ffffff !important;
+    border-color: #7c3aed !important;
+    box-shadow: 0 6px 18px rgba(139, 92, 246, 0.25);
+}
+
+
+/* =========================
+   CANCEL BUTTON
+========================= */
+
+body.dark-mode .evt-edit-form-card .btn-outline-secondary {
+    background: transparent !important;
+    color: #cbd5e1 !important;
+    border-color: #475569 !important;
+}
+
+body.dark-mode .evt-edit-form-card .btn-outline-secondary:hover {
+    background: #312e81 !important;
+    color: #c4b5fd !important;
+    border-color: #8b5cf6 !important;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+body.dark-mode #bookingModal .modal-content {
+    background: #1e293b !important;
+}
+
+body.dark-mode #bookingModal .modal-header {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed) !important;
+}
+
+body.dark-mode #bookingModal .modal-body {
+    background: #1e293b !important;
+}
+
+body.dark-mode #bookingModal .bg-light {
+    background: #0f172a !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode #bookingModal #modalEventName {
+    color: #f8fafc !important;
+}
+
+body.dark-mode #bookingModal .text-muted,
+body.dark-mode #bookingModal p.text-muted {
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode #bookingModal .bg-light strong {
+    color: #f8fafc !important;
+}
+
+body.dark-mode #bookingModal .text-purple {
+    color: #a78bfa !important;
+}
+
+
+/* =========================
+   SUCCESS MODAL
+========================= */
+
+body.dark-mode #bookingSuccessModal .modal-content.student-modal {
+    background: #1e293b !important;
+}
+
+body.dark-mode #bookingSuccessModal h3 {
+    color: #f8fafc !important;
+}
+
+body.dark-mode #bookingSuccessModal p {
+    color: #cbd5e1 !important;
+}
+
+
+/* =========================
+   ALERTS
+========================= */
+
+body.dark-mode .evt-page-wrapper .alert {
+    background: #1e293b !important;
+    color: #e2e8f0 !important;
+    border: 1px solid #334155 !important;
+}
+
+
+/* =========================
+   BOOKED EVENT
+========================= */
+
+body.dark-mode .booked-text {
+    color: #4ade80 !important;
+}
+
+body.dark-mode .booked-event-button {
+    background: #16a34a !important;
+    border-color: #16a34a !important;
+    color: #ffffff !important;
+}
+
+
+/* =========================
+   MAIN BUTTONS
+========================= */
+
+body.dark-mode .evt-card-item .btn-purple,
+body.dark-mode .btn-event,
+body.dark-mode .btn-save,
+body.dark-mode .choose-file-btn {
+    background: linear-gradient(135deg, #6d28d9, #8b5cf6) !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .evt-card-item .btn-purple:hover,
+body.dark-mode .btn-event:hover,
+body.dark-mode .btn-save:hover,
+body.dark-mode .choose-file-btn:hover {
+    background: linear-gradient(135deg, #7c3aed, #a78bfa) !important;
+    box-shadow: 0 8px 22px rgba(139, 92, 246, 0.3);
+    transform: translateY(-2px);
+}
+
+
+
+
+/* =========================
+   DATE INPUT ICON - MAKE WHITE
+========================= */
+
+.evt-page-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+}
+
+body.dark-mode .evt-page-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+}
+.evt-edit-form-card h2 {
+  margin-bottom: 30px !important;
+  background: linear-gradient(90deg, #3e38b5, #7c3aed) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  display: inline-block !important;
+  font-weight: 800 !important;
+}
+
+body.dark-mode .evt-edit-form-card h2 {
+  background: linear-gradient(90deg, #4f46e5, #c19dff, #433353) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
 }

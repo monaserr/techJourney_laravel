@@ -62,24 +62,100 @@
    DARK MODE
 ================================ */
 
+/* =========================================================
+   DARK MODE - TECH JOURNEY
+   Unified Theme
+========================================================= */
+
 body.dark-mode {
-  --color-text-dark: #f8fafc;
-  --color-text-gray: #cbd5e1;
-  --color-text-gray-alt: #94a3b8;
 
-  --color-bg-white: #1e293b;
-  --color-bg-light: #0f172a;
-  --color-bg-badge: #312e81;
-  --color-bg-tag: #334155;
+  /* =========================
+     BACKGROUNDS
+  ========================= */
 
-  --color-border: #334155;
-  --color-border-hover: #8b5cf6;
+  --color-bg-white: #151C2B;
+  --color-bg-light: #0F1420;
+  --color-bg-badge: #1B2336;
+  --color-bg-tag: #1B2336;
 
-  --shadow-purple-light: rgba(139, 92, 246, 0.15);
-  --shadow-purple-medium: rgba(139, 92, 246, 0.25);
+  /* =========================
+     TEXT
+  ========================= */
 
-  --color-banner-hover-bg: #312e81;
-}
+  --color-text-dark: #F3F4F6;
+  --color-text-gray: #CBD5E1;
+  --color-text-gray-alt: #94A3B8;
+
+  /* =========================
+     BORDERS
+  ========================= */
+
+  --color-border: rgba(148, 163, 184, 0.16);
+  --color-border-hover: #8B5CF6;
+
+  /* =========================
+     PRIMARY COLORS
+  ========================= */
+
+  --color-primary-light: #7C3AED;
+  --color-primary: #6366F1;
+  --color-primary-alt: #A855F7;
+
+  /* =========================
+     BANNER
+  ========================= */
+
+  --color-banner-1: #7C3AED;
+  --color-banner-2: #8B5CF6;
+  --color-banner-3: #6366F1;
+  --color-banner-text: #F3F4F6;
+  --color-banner-hover: #A855F7;
+  --color-banner-hover-bg: #1B2336;
+
+  /* =========================
+     SHADOWS / GLOW
+  ========================= */
+
+  --shadow-purple-light: rgba(124, 58, 237, 0.16);
+  --shadow-purple-medium: rgba(168, 85, 247, 0.28);
+
+  --shadow-banner: rgba(124, 58, 237, 0.20);
+
+  --overlay-white-soft: rgba(255, 255, 255, 0.05);
+
+  /* =========================
+     GRADIENTS
+  ========================= */
+
+  --gradient-primary:
+    linear-gradient(
+      135deg,
+      #7C3AED,
+      #A855F7
+    );
+
+  --gradient-title:
+    linear-gradient(
+      90deg,
+      #6366F1,
+      #A855F7,
+      #8B5CF6
+    );
+
+  --gradient-icon:
+    linear-gradient(
+      135deg,
+      #7C3AED,
+      #A855F7
+    );
+
+  --gradient-banner:
+    linear-gradient(
+      120deg,
+      #7C3AED,
+      #8B5CF6,
+      #6366F1
+    );
 }
 
 /* RESPONSIVE */
@@ -162,8 +238,29 @@ section {
 .logo img {
   width: 190px;
   height: auto;
+ 
+}
+
+
+.logo-light,
+.logo-dark {
+  width: 190px;
+  height: auto;
   display: block;
 }
+
+.logo-dark {
+  display: none;
+}
+
+body.dark-mode .logo-light {
+  display: none;
+}
+
+body.dark-mode .logo-dark {
+  display: block;
+}
+
 
 /* Navigation */
 .nav-links {
@@ -451,19 +548,37 @@ section {
 
 /* About Us Cards */
 
+/* ===============================
+   ABOUT CARD - STRONG GLOW
+================================ */
 .about-card {
-  height: 100%;
-  padding: 35px 30px;
-  background: var(--color-bg-light);
-  border: 1px solid var(--color-border);
-  border-radius: 18px;
-  transition: 0.3s ease;
+    height: 100%;
+    padding: 35px 30px;
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
+
+/* =========================
+   ABOUT CARD HOVER
+   ========================= */
+
 .about-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--color-border-hover);
-  box-shadow: 0 15px 35px var(--shadow-purple-light);
+
+    transform: translateY(-8px);
+
+    border-color: var(--color-border-hover);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18),
+        0 0 20px rgba(124, 58, 237, 0.22),
+        0 0 40px rgba(124, 58, 237, 0.10);
 }
 
 .about-icon {
@@ -1264,23 +1379,55 @@ section {
   margin: 0 !important;
 }
 
-.student-nav-avatar {
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
+.theme-toggle-pill {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-alt));
+  transition: background 0.3s ease;
+}
+
+.theme-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  overflow: hidden;
-  display: flex !important;
+  background: #fff;
+  display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none !important;
-  background: var(--purple-light);
-  color: var(--primary-dark);
-  border: 1px solid var(--color-border);
-  font-weight: 800;
-  font-size: 13px;
-  padding: 0 !important;
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease;
+}
+
+body.dark-mode .theme-toggle-thumb {
+  transform: translateX(24px);
+}
+
+.theme-icon-light {
+  color: var(--color-primary);
+}
+
+.theme-icon-dark {
+  display: none;
+  color: #312e81;
+}
+
+body.dark-mode .theme-icon-light {
+  display: none;
+}
+
+body.dark-mode .theme-icon-dark {
+  display: block;
+}
+
+html.preload-dark body {
+  background: #0f172a;
 }
 
 .student-nav-avatar:hover {
@@ -1317,13 +1464,9 @@ section {
   color: var(--color-primary) !important;
   border-color: var(--color-primary-light) !important;
   background: #f5f3ff !important;
-  transform: translateY(-1px);
-  box-shadow: 0 5px 14px rgba(79, 70, 229, 0.12);
+  transform: none !important;
+  box-shadow: none !important;
 }
-
-/* =========================================================
-   ENROLLED BUTTON
-   ========================================================= */
 
 .trackcard-buttons .enroll-track.enrolled,
 .enroll-track.enrolled {
@@ -1355,10 +1498,6 @@ section {
   outline: none !important;
   transform: none !important;
 }
-
-/* =========================================================
-   NAVBAR POSITIONING
-   ========================================================= */
 
 .navbar-container {
   position: relative;
@@ -1411,9 +1550,6 @@ section {
     padding-right: 150px;
   }
 }
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
 
 @media (max-width: 900px) {
   .instructor-event-main {
@@ -1428,12 +1564,6 @@ section {
     max-width: 100%;
   }
 }
-/* =========================================================
-   STUDENT SUCCESS / ACTION MODALS
-   Shared by: #bookingSuccessModal, #enrollSuccessModal,
-   #studentActionModal (cancel course/event), and any future
-   modal using the same .student-modal markup.
-   ========================================================= */
 
 .student-modal {
   border: none;
@@ -1631,3 +1761,1874 @@ section {
     flex-direction: row;
   }
 }
+
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.animated-page .hero-title,
+.animated-page .hero-text,
+.animated-page .hero-button,
+.animated-page .hero-image {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+}
+
+
+/* =========================================================
+   DARK MODE - SOFT GLOW SYSTEM
+   Applies ONLY when dark mode is active
+========================================================= */
+
+
+/* =========================
+   MAIN PAGE BACKGROUND
+========================= */
+
+body.dark-mode {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(124, 58, 237, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 35%,
+      rgba(99, 102, 241, 0.07),
+      transparent 30%
+    ),
+    #0F1420;
+
+  color: #F3F4F6;
+
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+
+/* =========================
+   SOFT AMBIENT LIGHT
+   Every page gets a subtle glow
+========================= */
+
+body.dark-mode::before {
+  content: "";
+  position: fixed;
+
+  top: 10%;
+  left: 50%;
+
+  width: 420px;
+  height: 420px;
+
+  transform: translateX(-50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(124, 58, 237, 0.07) 0%,
+      rgba(124, 58, 237, 0.035) 35%,
+      transparent 70%
+    );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  animation: ambientGlow 7s ease-in-out infinite;
+}
+
+
+/* =========================
+   AMBIENT GLOW ANIMATION
+========================= */
+
+@keyframes ambientGlow {
+
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: translateX(-50%) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.12);
+  }
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+body.dark-mode .navbar {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(21, 28, 43, 0.97),
+      rgba(15, 20, 32, 0.97)
+    );
+
+  border-bottom:
+    1px solid rgba(139, 92, 246, 0.16);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.20);
+
+  backdrop-filter: blur(14px);
+}
+
+
+/* =========================
+   NAVBAR SOFT LIGHT
+========================= */
+
+body.dark-mode .navbar::after {
+  content: "";
+
+  position: absolute;
+
+  left: 18%;
+  right: 18%;
+  bottom: -1px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(124, 58, 237, 0.35),
+      rgba(168, 85, 247, 0.45),
+      rgba(99, 102, 241, 0.35),
+      transparent
+    );
+
+  opacity: 0.7;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   NAV LINKS
+========================= */
+
+body.dark-mode .nav-links a {
+  color: #CBD5E1;
+}
+
+body.dark-mode .nav-links a:hover {
+  color: #F3F4F6;
+
+  background:
+    rgba(124, 58, 237, 0.10);
+
+  box-shadow:
+    0 0 18px rgba(124, 58, 237, 0.08);
+}
+
+
+/* =========================
+   ACTIVE NAV LINK
+========================= */
+
+body.dark-mode .nav-links a.active {
+  color: #FFFFFF;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7C3AED,
+      #8B5CF6
+    );
+
+  box-shadow:
+    0 0 18px rgba(124, 58, 237, 0.28),
+    0 5px 18px rgba(99, 102, 241, 0.14);
+}
+
+
+/* =========================
+   THEME TOGGLE
+========================= */
+
+body.dark-mode .theme-toggle-pill {
+  background:
+    linear-gradient(
+      135deg,
+      #7C3AED,
+      #A855F7
+    );
+
+  box-shadow:
+    0 0 14px rgba(168, 85, 247, 0.25),
+    0 0 28px rgba(124, 58, 237, 0.10);
+}
+
+
+/* =========================
+   THEME TOGGLE THUMB
+========================= */
+
+body.dark-mode .theme-toggle-thumb {
+  background: #F3F4F6;
+
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.30);
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+body.dark-mode .login-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #7C3AED,
+      #A855F7
+    );
+
+  box-shadow:
+    0 0 18px rgba(124, 58, 237, 0.18);
+}
+
+body.dark-mode .login-btn:hover {
+  box-shadow:
+    0 0 22px rgba(168, 85, 247, 0.32),
+    0 8px 22px rgba(124, 58, 237, 0.18);
+}
+
+
+/* =========================================================
+   LOGOUT GLOW ✨
+========================================================= */
+
+body.dark-mode .student-nav-account .student-logout {
+  position: relative;
+
+  background:
+    rgba(21, 28, 43, 0.90) !important;
+
+  color: #F3F4F6 !important;
+
+  border:
+    1px solid rgba(148, 163, 184, 0.18) !important;
+
+  overflow: visible;
+
+  z-index: 1;
+}
+
+
+
+/* Logout breathing glow */
+
+@keyframes logoutGlow {
+
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.98);
+  }
+
+  50% {
+    opacity: 0.75;
+    transform: scale(1.03);
+  }
+}
+
+
+/* Small light movement */
+
+@keyframes logoutShimmer {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateX(-5px);
+  }
+
+  50% {
+    opacity: 0.65;
+    transform: translateX(5px);
+  }
+}
+/* Logout hover */
+body.dark-mode .student-nav-account .student-logout:hover {
+  color: #FFFFFF !important;
+  border-color: rgba(168, 85, 247, 0.45) !important;
+  background: rgba(27, 35, 54, 0.95) !important;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+/* =========================================================
+   DARK MODE CARDS - TECH JOURNEY
+========================================================= */
+
+body.dark-mode .about-card,
+body.dark-mode .track-card,
+body.dark-mode .home-event-card {
+
+    background:  color: #F3F4F6;;
+
+    border: 1px solid rgba(148, 163, 184, 0.16);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+body.dark-mode .about-card:hover,
+body.dark-mode .track-card:hover,
+body.dark-mode .home-event-card:hover {
+
+    border-color: #8B5CF6;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18),
+        0 0 20px rgba(124, 58, 237, 0.22),
+        0 0 40px rgba(124, 58, 237, 0.10);
+
+    transform: translateY(-8px);
+}
+
+
+/* =========================================================
+   CARD TITLES
+========================================================= */
+
+body.dark-mode .about-card h4,
+body.dark-mode .track-card h3,
+body.dark-mode .home-event-card h3 {
+
+    color: #F3F4F6;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
+body.dark-mode .about-card p,
+body.dark-mode .track-card .desc,
+body.dark-mode .home-event-date {
+
+    color: #CBD5E1;
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+body.dark-mode .about-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #7C3AED,
+            #A855F7
+        );
+
+    color: #F3F4F6;
+
+    box-shadow:
+        0 0 15px rgba(124, 58, 237, 0.20);
+}
+
+
+/* =========================================================
+   TRACK SKILLS / TAGS
+========================================================= */
+
+body.dark-mode .track-skills span {
+
+    background: #1B2336;
+
+    color: #94A3B8;
+
+    border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+body.dark-mode .hero-section {
+  background:
+    radial-gradient(
+      circle at 70% 30%,
+      rgba(124, 58, 237, 0.08),
+      transparent 35%
+    ),
+    #0F1420;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+body.dark-mode .about-section {
+  background:
+    linear-gradient(
+      180deg,
+      #0F1420,
+      #151C2B
+    );
+}
+
+
+/* =========================================================
+   TRACKS
+========================================================= */
+
+body.dark-mode .tracks-section {
+  background:
+    radial-gradient(
+      circle at 20% 40%,
+      rgba(99, 102, 241, 0.05),
+      transparent 30%
+    ),
+    #0F1420;
+}
+
+
+/* =========================================================
+   EVENT IMAGES / TRACK IMAGES
+========================================================= */
+
+body.dark-mode .track-image,
+body.dark-mode .home-event-image {
+  background:
+    #151C2B;
+}
+
+
+/* =========================================================
+   TAGS
+========================================================= */
+
+body.dark-mode .track-skills span {
+  background:
+    rgba(99, 102, 241, 0.10);
+
+  color:
+    #CBD5E1;
+
+  border:
+    1px solid rgba(99, 102, 241, 0.12);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+/* =========================================================
+   PRIMARY BUTTONS
+   Explore More + Hero + Enroll
+========================================================= */
+
+body.dark-mode .explore-btn,
+body.dark-mode .hero-btn,
+body.dark-mode .enroll-track {
+
+    background:
+        linear-gradient(
+            135deg,
+            #7C3AED,
+            #A855F7
+        );
+
+    color: #F3F4F6;
+
+    border: 1px solid transparent;
+
+    box-shadow:
+        0 0 16px rgba(124, 58, 237, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Hover */
+
+body.dark-mode .explore-btn:hover,
+body.dark-mode .hero-btn:hover,
+body.dark-mode .enroll-track:hover {
+
+    color: #F3F4F6;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 20px rgba(168, 85, 247, 0.28),
+        0 8px 25px rgba(124, 58, 237, 0.18);
+}
+
+
+body.dark-mode .explore-btn:hover,
+body.dark-mode .hero-btn:hover,
+body.dark-mode .enroll-track:hover {
+  box-shadow:
+    0 0 25px rgba(168, 85, 247, 0.22),
+    0 10px 25px rgba(124, 58, 237, 0.18);
+}
+
+
+/* =========================================================
+   OUTLINE BUTTONS
+========================================================= */
+
+body.dark-mode .learn-more-btn,
+body.dark-mode .explore-link,
+body.dark-mode .event-explore-link {
+  background: rgba(21, 28, 43, 0.70);
+  color: #A855F7;
+  border: 1px solid rgba(168, 85, 247, 0.40);
+
+  text-shadow:
+    0 0 8px rgba(124, 58, 237, 0.9),
+    0 0 18px rgba(124, 58, 237, 0.7),
+    0 0 32px rgba(124, 58, 237, 0.45);
+
+  box-shadow:
+    0 0 10px rgba(124, 58, 237, 0.35),
+    0 0 20px rgba(124, 58, 237, 0.2);
+}
+
+body.dark-mode .learn-more-btn:hover,
+body.dark-mode .explore-link:hover,
+body.dark-mode .event-explore-link:hover {
+  background: rgba(124, 58, 237, 0.10);
+  color: #A855F7;
+  border-color: rgba(168, 85, 247, 0.65);
+
+  text-shadow:
+    0 0 12px rgba(124, 58, 237, 1),
+    0 0 26px rgba(124, 58, 237, 0.85),
+    0 0 45px rgba(124, 58, 237, 0.6);
+
+  box-shadow:
+    0 0 22px rgba(124, 58, 237, 0.55),
+    0 0 40px rgba(124, 58, 237, 0.35);
+}
+
+body.dark-mode .learn-more-btn {
+  text-shadow:
+    0 0 6px rgba(168, 85, 247, 0.8),
+    0 0 14px rgba(124, 58, 237, 0.5);
+}
+
+body.dark-mode .learn-more-btn:hover {
+  text-shadow:
+    0 0 6px rgba(168, 85, 247, 1),
+    0 0 20px rgba(124, 58, 237, 0.7);
+}
+
+/* =========================================================
+   ICONS
+========================================================= */
+
+body.dark-mode .about-icon {
+  background:
+    linear-gradient(
+      135deg,
+      #7C3AED,
+      #A855F7
+    );
+
+  box-shadow:
+    0 0 20px rgba(124, 58, 237, 0.16);
+}
+
+
+/* =========================================================
+   ASSESSMENT BANNER
+========================================================= */
+
+body.dark-mode .assess-banner {
+  background:
+    linear-gradient(
+      120deg,
+      #7C3AED,
+      #8B5CF6,
+      #6366F1
+    );
+
+  box-shadow:
+    0 18px 45px rgba(124, 58, 237, 0.18);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+body.dark-mode .site-footer {
+  background:
+    linear-gradient(
+      180deg,
+      #151C2B,
+      #0F1420
+    );
+
+  border-top:
+    1px solid rgba(124, 58, 237, 0.12);
+
+  box-shadow:
+    0 -10px 35px rgba(124, 58, 237, 0.04);
+}
+
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+body.dark-mode .modal-content,
+body.dark-mode .student-modal {
+  background:
+    #151C2B;
+
+  color:
+    #F3F4F6;
+
+  border:
+    1px solid rgba(148, 163, 184, 0.14);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(124, 58, 237, 0.08);
+}
+
+
+body.dark-mode .modal-header {
+  background:
+    linear-gradient(
+      135deg,
+      #7C3AED,
+      #A855F7
+    );
+}
+
+
+/* =========================================================
+   SUCCESS ICON
+========================================================= */
+
+body.dark-mode .student-modal .success-icon {
+  background:
+    rgba(16, 185, 129, 0.12);
+
+  color:
+    #10B981;
+}
+
+
+/* =========================================================
+   MOBILE NAVBAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+  body.dark-mode .nav-links {
+    background:
+      #151C2B;
+
+    border-bottom:
+      1px solid rgba(139, 92, 246, 0.16);
+
+    box-shadow:
+      0 15px 30px rgba(0, 0, 0, 0.20);
+  }
+
+  body.dark-mode .navbar-toggler {
+    border-color:
+      rgba(168, 85, 247, 0.55);
+
+    box-shadow:
+      0 0 12px rgba(124, 58, 237, 0.10);
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+  /* =========================================================
+   LOGOUT BUTTON - REMOVE DARK MODE SHADOW
+========================================================= */
+
+.student-nav-account .student-logout {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    text-shadow: none !important;
+    transform: none !important;
+}
+
+.student-nav-account .student-logout:hover,
+.student-nav-account .student-logout:focus,
+.student-nav-account .student-logout:active {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    text-shadow: none !important;
+    transform: none !important;
+}
+
+
+
+
+/* Remove any shadow from logout area only */
+.student-nav-account-right {
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+.student-nav-account-right form,
+.student-nav-account-right .student-logout {
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+.student-nav-account-right .student-logout {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    text-shadow: none !important;
+}
+
+.student-nav-account-right .student-logout:hover,
+.student-nav-account-right .student-logout:focus,
+.student-nav-account-right .student-logout:active {
+    box-shadow: none !important;
+    filter: none !important;
+    outline: none !important;
+    background: transparent !important;
+    transform: none !important;
+}
+
+.student-nav-account-right::before,
+.student-nav-account-right::after,
+.student-nav-account-right form::before,
+.student-nav-account-right form::after,
+.student-nav-account-right .student-logout::before,
+.student-nav-account-right .student-logout::after {
+    content: none !important;
+    display: none !important;
+    box-shadow: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+.logo-light,
+.logo-dark {
+  width: 190px;
+  height: auto;
+  display: block;
+}
+
+.logo-dark {
+  display: none;
+}
+
+body.dark-mode .logo-light {
+  display: none;
+}
+
+body.dark-mode .logo-dark {
+  display: block;
+}
+
+
+
+
+
+
+.logo-light,
+.logo-dark {
+  width: 190px;
+  height: auto;
+  display: block;
+  background: transparent;
+}
+
+.logo-dark {
+  display: none;
+}
+
+body.dark-mode .logo-light {
+  display: none;
+}
+
+body.dark-mode .logo-dark {
+  display: block;
+}
+
+
+/* =========================================================
+   FINAL DARK MODE CARD + BUTTON DESIGN
+   Tech Journey
+   ========================================================= */
+
+/* =========================================================
+   ABOUT CARDS
+   ========================================================= */
+
+body.dark-mode .about-card {
+    background: #1B2336 !important;
+
+    border: 1px solid rgba(148, 163, 184, 0.16) !important;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* About Card Hover */
+
+body.dark-mode .about-card:hover {
+    transform: translateY(-8px) !important;
+
+    border-color: #8B5CF6 !important;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20),
+        0 0 20px rgba(124, 58, 237, 0.25),
+        0 0 40px rgba(124, 58, 237, 0.10) !important;
+}
+
+
+/* About Card Title */
+
+body.dark-mode .about-card h4 {
+    color: #F3F4F6 !important;
+}
+
+
+/* About Card Description */
+
+body.dark-mode .about-card p {
+    color: #CBD5E1 !important;
+}
+
+
+/* About Icon */
+
+body.dark-mode .about-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #7C3AED,
+            #A855F7
+        ) !important;
+
+    color: #F3F4F6 !important;
+
+    box-shadow:
+        0 0 18px rgba(124, 58, 237, 0.20);
+}
+
+
+/* =========================================================
+   TRACK CARDS
+   ========================================================= */
+
+body.dark-mode .track-card {
+    background: #1B2336 !important;
+
+    border: 1px solid rgba(148, 163, 184, 0.16) !important;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Track Card Hover */
+
+body.dark-mode .track-card:hover {
+    transform: translateY(-8px) !important;
+
+    border-color: #8B5CF6 !important;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20),
+        0 0 20px rgba(124, 58, 237, 0.25),
+        0 0 40px rgba(124, 58, 237, 0.10) !important;
+}
+
+
+/* Track Card Title */
+
+body.dark-mode .track-card h3 {
+    color: #F3F4F6 !important;
+}
+
+
+/* Track Card Description */
+
+body.dark-mode .track-card .desc {
+    color: #CBD5E1 !important;
+}
+
+
+/* Track Image */
+
+body.dark-mode .track-image {
+    background: #151C2B !important;
+}
+
+
+/* =========================================================
+   EVENT CARDS
+   ========================================================= */
+
+body.dark-mode .home-event-card {
+    background: #1B2336 !important;
+
+    border: 1px solid rgba(148, 163, 184, 0.16) !important;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Event Card Hover */
+
+body.dark-mode .home-event-card:hover {
+    transform: translateY(-8px) !important;
+
+    border-color: #8B5CF6 !important;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20),
+        0 0 20px rgba(124, 58, 237, 0.25),
+        0 0 40px rgba(124, 58, 237, 0.10) !important;
+}
+
+
+/* Event Card Title */
+
+body.dark-mode .home-event-card h3 {
+    color: #F3F4F6 !important;
+}
+
+
+/* Event Date */
+
+body.dark-mode .home-event-date {
+    color: #CBD5E1 !important;
+}
+
+
+/* =========================================================
+   TRACK SKILLS
+   ========================================================= */
+
+body.dark-mode .track-skills span {
+    background: #1B2336 !important;
+
+    color: #94A3B8 !important;
+
+    border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+
+/* =========================================================
+   LEARN MORE
+   ========================================================= */
+
+body.dark-mode .learn-more-btn {
+
+    background: #151C2B !important;
+
+    color: #A855F7 !important;
+
+    border: 1px solid rgba(168, 85, 247, 0.45) !important;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 10px rgba(124, 58, 237, 0.15) !important;
+
+    text-shadow: none !important;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Learn More Hover */
+
+body.dark-mode .learn-more-btn:hover {
+
+    background: #1B2336 !important;
+
+    color: #A855F7 !important;
+
+    border-color: #A855F7 !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 12px rgba(124, 58, 237, 0.30),
+        0 0 25px rgba(124, 58, 237, 0.16) !important;
+
+    text-shadow: none !important;
+}
+
+
+/* =========================================================
+   EXPLORE LINK
+   ========================================================= */
+
+body.dark-mode .explore-link {
+
+    background: #151C2B !important;
+
+    color: #A855F7 !important;
+
+    border: 1px solid rgba(168, 85, 247, 0.45) !important;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 10px rgba(124, 58, 237, 0.15) !important;
+
+    text-shadow: none !important;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Explore Hover */
+
+body.dark-mode .explore-link:hover {
+
+    background: #1B2336 !important;
+
+    color: #A855F7 !important;
+
+    border-color: #A855F7 !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 12px rgba(124, 58, 237, 0.30),
+        0 0 25px rgba(124, 58, 237, 0.16) !important;
+
+    text-shadow: none !important;
+}
+
+
+/* Explore Arrow */
+
+body.dark-mode .explore-link span {
+    color: #A855F7 !important;
+
+    transition: transform 0.3s ease;
+}
+
+
+body.dark-mode .explore-link:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   EVENT EXPLORE LINK
+   ========================================================= */
+
+body.dark-mode .event-explore-link {
+
+    background: #151C2B !important;
+
+    color: #A855F7 !important;
+
+    border: 1px solid rgba(168, 85, 247, 0.45) !important;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 10px rgba(124, 58, 237, 0.15) !important;
+
+    text-shadow: none !important;
+}
+
+
+body.dark-mode .event-explore-link:hover {
+
+    background: #1B2336 !important;
+
+    color: #A855F7 !important;
+
+    border-color: #A855F7 !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 12px rgba(124, 58, 237, 0.30),
+        0 0 25px rgba(124, 58, 237, 0.16) !important;
+
+    text-shadow: none !important;
+}
+
+
+/* =========================================================
+   EXPLORE MORE - FILLED BUTTON
+   ========================================================= */
+
+body.dark-mode .explore-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #7C3AED,
+            #A855F7
+        ) !important;
+
+    color: #F3F4F6 !important;
+
+    border: 1px solid transparent !important;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 16px rgba(124, 58, 237, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Explore More Hover */
+
+body.dark-mode .explore-btn:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #7C3AED,
+            #A855F7
+        ) !important;
+
+    color: #F3F4F6 !important;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 20px rgba(168, 85, 247, 0.28),
+        0 8px 25px rgba(124, 58, 237, 0.18) !important;
+}
+
+
+/* =========================================================
+   HERO BUTTON
+   ========================================================= */
+
+body.dark-mode .hero-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #7C3AED,
+            #A855F7
+        ) !important;
+
+    color: #F3F4F6 !important;
+
+    border: 1px solid transparent !important;
+
+    box-shadow:
+        0 0 16px rgba(124, 58, 237, 0.15);
+}
+
+
+body.dark-mode .hero-btn:hover {
+
+    color: #F3F4F6 !important;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 20px rgba(168, 85, 247, 0.28),
+        0 8px 25px rgba(124, 58, 237, 0.18) !important;
+}
+
+
+/* =========================================================
+   ENROLL BUTTON
+   ========================================================= */
+
+body.dark-mode .enroll-track {
+
+    background:
+        linear-gradient(
+            135deg,
+            #7C3AED,
+            #A855F7
+        ) !important;
+
+    color: #F3F4F6 !important;
+
+    border: 1px solid transparent !important;
+
+    box-shadow:
+        0 0 16px rgba(124, 58, 237, 0.15);
+}
+
+
+body.dark-mode .enroll-track:hover {
+
+    color: #F3F4F6 !important;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 20px rgba(168, 85, 247, 0.28),
+        0 8px 25px rgba(124, 58, 237, 0.18) !important;
+}
+
+
+/* =========================================================
+   ABOUT / TRACKS TITLES
+   ========================================================= */
+
+body.dark-mode .about-badge,
+body.dark-mode .tracks-badge,
+body.dark-mode .events-badge {
+
+    color: #F3F4F6 !important;
+}
+
+
+body.dark-mode .about-title,
+body.dark-mode .tracks-title,
+body.dark-mode .events-title {
+
+    color: #F3F4F6 !important;
+}
+
+
+body.dark-mode .about-subtitle,
+body.dark-mode .tracks-subtitle,
+body.dark-mode .events-subtitle {
+
+    color: #CBD5E1 !important;
+}
+
+
+/* =========================================================
+   GRADIENT TITLES
+   ========================================================= */
+
+body.dark-mode .about-title span,
+body.dark-mode .tracks-title span,
+body.dark-mode .events-title span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #6366F1,
+            #A855F7,
+            #8B5CF6
+        ) !important;
+
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+
+/* =========================================================
+   SECTION BACKGROUNDS
+   ========================================================= */
+
+body.dark-mode .about-section {
+
+    background:
+        linear-gradient(
+            180deg,
+            #0F1420,
+            #151C2B
+        ) !important;
+}
+
+
+body.dark-mode .tracks-section {
+
+    background: #0F1420 !important;
+}
+
+
+/* =========================================================
+   CARD ANIMATION
+   Keep existing animation
+   ========================================================= */
+
+body.dark-mode .about-card,
+body.dark-mode .track-card,
+body.dark-mode .home-event-card {
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 576px) {
+
+    body.dark-mode .learn-more-btn,
+    body.dark-mode .explore-link,
+    body.dark-mode .event-explore-link {
+
+        box-shadow:
+            0 0 8px rgba(124, 58, 237, 0.12) !important;
+    }
+
+    body.dark-mode .about-card,
+    body.dark-mode .track-card,
+    body.dark-mode .home-event-card {
+
+        border-radius: 16px;
+    }
+}
+
+/* =========================================================
+   EXTRA LIGHTING - TECH JOURNEY
+   Makes the page brighter and more alive
+   ========================================================= */
+
+/* =========================
+   LIGHT MODE - SOFT GLOW
+   ========================= */
+
+body {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(124, 58, 237, 0.06),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 25%,
+            rgba(99, 102, 241, 0.06),
+            transparent 30%
+        ),
+        #ffffff;
+}
+
+/* Hero becomes brighter */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 35%,
+            rgba(124, 58, 237, 0.13),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(147, 51, 234, 0.07),
+            transparent 30%
+        ),
+        var(--color-bg-light);
+}
+
+/* Soft light behind hero content */
+.hero-section::before {
+    content: "";
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    top: 80px;
+    right: 8%;
+
+    background: radial-gradient(
+        circle,
+        rgba(124, 58, 237, 0.10),
+        transparent 70%
+    );
+
+    filter: blur(20px);
+    pointer-events: none;
+}
+
+/* Hero image gets a subtle glow */
+.hero-image img {
+    filter:
+        drop-shadow(0 20px 35px rgba(79, 70, 229, 0.12));
+}
+
+/* =========================
+   ABOUT SECTION
+   ========================= */
+
+.about-section {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(124, 58, 237, 0.055),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 40%,
+            rgba(147, 51, 234, 0.045),
+            transparent 28%
+        ),
+        #ffffff;
+}
+
+/* About cards slightly brighter */
+.about-card {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #faf9ff
+        );
+
+    box-shadow:
+        0 8px 25px rgba(79, 70, 229, 0.06);
+}
+
+.about-card:hover {
+    box-shadow:
+        0 12px 30px rgba(79, 70, 229, 0.10),
+        0 0 25px rgba(124, 58, 237, 0.12);
+}
+
+/* =========================
+   TRACKS SECTION
+   ========================= */
+
+.tracks-section {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(99, 102, 241, 0.07),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 70%,
+            rgba(124, 58, 237, 0.05),
+            transparent 30%
+        ),
+        #f8fafc;
+}
+
+/* Track cards */
+.track-card,
+.home-event-card {
+    box-shadow:
+        0 8px 25px rgba(79, 70, 229, 0.055);
+}
+
+.track-card:hover,
+.home-event-card:hover {
+    box-shadow:
+        0 15px 40px rgba(79, 70, 229, 0.10),
+        0 0 25px rgba(124, 58, 237, 0.12);
+}
+
+/* =========================
+   BUTTON GLOW
+   ========================= */
+
+.hero-btn,
+.explore-btn,
+.enroll-track,
+.login-btn {
+    box-shadow:
+        0 8px 22px rgba(79, 70, 229, 0.16);
+}
+
+.hero-btn:hover,
+.explore-btn:hover,
+.enroll-track:hover,
+.login-btn:hover {
+    box-shadow:
+        0 10px 28px rgba(79, 70, 229, 0.25),
+        0 0 18px rgba(124, 58, 237, 0.12);
+}
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+
+.about-title span,
+.tracks-title span,
+.events-title span,
+.hero-title span {
+    filter:
+        drop-shadow(0 3px 10px rgba(124, 58, 237, 0.12));
+}
+
+/* =========================
+   DARK MODE - BRIGHTER
+   ========================= */
+
+body.dark-mode {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(124, 58, 237, 0.13),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 25%,
+            rgba(99, 102, 241, 0.11),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(168, 85, 247, 0.07),
+            transparent 30%
+        ),
+        #0F1420;
+}
+
+/* =========================
+   DARK HERO
+   ========================= */
+
+body.dark-mode .hero-section {
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(124, 58, 237, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 75%,
+            rgba(99, 102, 241, 0.10),
+            transparent 30%
+        ),
+        #0F1420;
+}
+
+/* Stronger ambient light */
+body.dark-mode .hero-section::before {
+    content: "";
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: 40px;
+    right: 5%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(168, 85, 247, 0.13),
+            rgba(124, 58, 237, 0.05) 40%,
+            transparent 72%
+        );
+
+    filter: blur(25px);
+    pointer-events: none;
+}
+
+/* Hero image glow */
+body.dark-mode .hero-image img {
+    filter:
+        drop-shadow(0 20px 35px rgba(124, 58, 237, 0.20))
+        drop-shadow(0 0 25px rgba(168, 85, 247, 0.08));
+}
+
+/* =========================
+   DARK ABOUT
+   ========================= */
+
+body.dark-mode .about-section {
+    background:
+        radial-gradient(
+            circle at 15% 45%,
+            rgba(124, 58, 237, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(168, 85, 247, 0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #0F1420,
+            #151C2B
+        ) !important;
+}
+
+/* =========================
+   DARK TRACKS
+   ========================= */
+
+body.dark-mode .tracks-section {
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(99, 102, 241, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 70%,
+            rgba(124, 58, 237, 0.08),
+            transparent 30%
+        ),
+        #0F1420 !important;
+}
+
+/* =========================
+   DARK CARDS - MORE LIGHT
+   ========================= */
+
+body.dark-mode .about-card,
+body.dark-mode .track-card,
+body.dark-mode .home-event-card {
+    background:
+        linear-gradient(
+            145deg,
+            #1B2336,
+            #182033
+        ) !important;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.16),
+        0 0 18px rgba(124, 58, 237, 0.045);
+}
+
+body.dark-mode .about-card:hover,
+body.dark-mode .track-card:hover,
+body.dark-mode .home-event-card:hover {
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.20),
+        0 0 25px rgba(124, 58, 237, 0.25),
+        0 0 50px rgba(168, 85, 247, 0.10) !important;
+}
+
+/* =========================
+   DARK ICONS
+   ========================= */
+
+body.dark-mode .about-icon {
+    box-shadow:
+        0 0 18px rgba(124, 58, 237, 0.28),
+        0 0 35px rgba(168, 85, 247, 0.10);
+}
+
+/* =========================
+   DARK BUTTONS
+   ========================= */
+
+body.dark-mode .hero-btn,
+body.dark-mode .explore-btn,
+body.dark-mode .enroll-track,
+body.dark-mode .login-btn {
+    box-shadow:
+        0 0 18px rgba(124, 58, 237, 0.22),
+        0 8px 25px rgba(124, 58, 237, 0.12);
+}
+
+body.dark-mode .hero-btn:hover,
+body.dark-mode .explore-btn:hover,
+body.dark-mode .enroll-track:hover,
+body.dark-mode .login-btn:hover {
+    box-shadow:
+        0 0 25px rgba(168, 85, 247, 0.32),
+        0 10px 30px rgba(124, 58, 237, 0.20);
+}
+
+/* =========================
+   DARK SECTION TITLES
+   ========================= */
+
+body.dark-mode .about-title span,
+body.dark-mode .tracks-title span,
+body.dark-mode .events-title span,
+body.dark-mode .hero-title span {
+    filter:
+        drop-shadow(0 0 12px rgba(168, 85, 247, 0.22));
+}
+
+/* =========================
+   EXTRA LIGHT LINE
+   ========================= */
+
+body.dark-mode .about-line,
+body.dark-mode .track-line {
+    box-shadow:
+        0 0 10px rgba(124, 58, 237, 0.35),
+        0 0 20px rgba(168, 85, 247, 0.15);
+}
+
+
+/* =========================================================
+   LEARN MORE - BRIGHT GLOW
+   ========================================================= */
+
+.learn-more-btn {
+    background: #ffffff;
+    color: #6d28d9;
+    border: 1px solid #8b5cf6;
+
+    box-shadow:
+        0 0 10px rgba(124, 58, 237, 0.20),
+        0 0 22px rgba(124, 58, 237, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background: #f5f3ff;
+    color: #6d28d9;
+    border-color: #7c3aed;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 12px rgba(124, 58, 237, 0.40),
+        0 0 25px rgba(124, 58, 237, 0.25),
+        0 8px 25px rgba(79, 70, 229, 0.18);
+}
+
+
+/* =========================================================
+   DARK MODE - BRIGHT PURPLE GLOW
+   ========================================================= */
+
+body.dark-mode .learn-more-btn {
+    background: #1B2336 !important;
+   color: #e9dbf9 !important;
+
+    border: 1px solid #b670f7 !important;
+
+    box-shadow:
+        0 0 10px rgba(168, 85, 247, 0.45),
+        0 0 22px rgba(124, 58, 237, 0.30),
+        0 0 40px rgba(124, 58, 237, 0.12) !important;
+
+    text-shadow:
+        0 0 8px rgba(192, 132, 252, 0.45);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+body.dark-mode .learn-more-btn:hover {
+    background: #241B3B !important;
+    color: #f0e3ff !important;
+
+    border-color: #C084FC !important;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 15px rgba(192, 132, 252, 0.65),
+        0 0 30px rgba(168, 85, 247, 0.50),
+        0 0 55px rgba(124, 58, 237, 0.25),
+        0 8px 25px rgba(124, 58, 237, 0.20) !important;
+
+    text-shadow:
+        0 0 10px rgba(233, 213, 255, 0.70);
+}
+
+
+
+
+/* تأكد إن الافتراضي إخفاء واحد منهم */
+.logo-dark { display: none; }
+.dark-mode .logo-dark { display: block; }
+.dark-mode .logo-light { display: none; }

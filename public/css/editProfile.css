@@ -52,11 +52,17 @@
 
 .evt-edit-form-card h2 {
   margin-bottom: 30px !important;
-  color: var(--color-text-dark);
   font-size: 26px;
   font-weight: 800;
+  text-align: center;
+  background: linear-gradient(90deg, #1b1853, #a36ffe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+  width: 100%;
 }
-
 /* =========================
    Labels / Inputs
 ========================= */
@@ -64,7 +70,7 @@
 .evt-edit-form-card .form-label {
   display: block;
   margin-bottom: 8px !important;
-  color: #374151;
+  color: #ffffff;
   font-size: 14px;
   font-weight: 600;
 }
@@ -308,4 +314,48 @@
     border-left: 1px solid #c0c5cd !important;
     border-top: 0;
   }
+
+
+  body.dark-mode {
+  --color-primary: #8b5cf6;
+  --color-primary-alt: #a78bfa;
+  --color-text-dark: #f8fafc;
+  --color-text-gray: #94a3b8;
+  --color-border: #334155;
+  --color-border-hover: #8b5cf6;
+  --color-bg-white: #1e293b;
+  --shadow-purple-light: rgba(139, 92, 246, 0.15);
+  --text-muted: #94a3b8;
+}
+
+body.dark-mode .evt-page-wrapper .alert-danger {
+  background-color: #3f1d1d;
+  color: #fca5a5;
+}
+
+body.dark-mode .evt-edit-form-card .form-control {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+body.dark-mode .evt-edit-form-card .form-control:disabled {
+  background-color: #1e293b;
+  color: #64748b;
+}
+
+body.dark-mode .file-name {
+  background-color: #0f172a;
+  color: #94a3b8;
+  border-color: #334155 !important;
+}
+
+body.dark-mode .file-name.selected {
+  color: #c4b5fd;
+  background-color: #312e81;
+  border-color: #4c1d95;
+}
+}
+.evt-page-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: brightness(0) invert(1);
+    cursor: pointer;
 }

@@ -135,19 +135,16 @@
         }
 
 
-        .login-page .form-control {
-            height: 50px;
-
-            border: 1px solid var(--color-border);
-            border-radius: 10px;
-
-            padding: 10px 15px;
-
-            font-size: 15px;
-            color: var(--color-text-dark);
-
-            transition: all 0.3s ease;
-        }
+      .login-page .form-control {
+    height: 50px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 15px;
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-white);   
+    transition: all 0.3s ease;
+}
 
 
         .login-page .form-control::placeholder {

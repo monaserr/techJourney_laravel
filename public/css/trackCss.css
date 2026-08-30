@@ -468,7 +468,6 @@ p {
         font-size: 34px;
     }
 }
-
 @media (max-width: 576px) {
     .hero h1 {
         font-size: 30px;
@@ -496,4 +495,161 @@ p {
     .track-explore-link {
         margin-left: 0;
     }
+}
+
+
+/* DARK MODE */
+body.dark-mode {
+    --primary: #8b5cf6;
+    --primary-dark: #a78bfa;
+    --primary-light: #a78bfa;
+    --background: #0f172a;
+    --white: #1e293b;
+    --text: #f8fafc;
+    --text-light: #cbd5e1;
+    --muted: #94a3b8;
+    --border: #334155;
+    --purple-light: #312e81;
+}
+/* ================= DARK MODE - TRACKS ================= */
+
+body.dark-mode .track-card {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-mode .track-image {
+    background: linear-gradient(135deg, #1e1b3a, #25204a);
+}
+
+body.dark-mode .track-card h3,
+body.dark-mode .track-card .desc {
+    color: var(--text);
+}
+
+body.dark-mode .track-card .desc {
+    color: var(--text-light);
+}
+
+/* Learn More */
+body.dark-mode .track-explore-link {
+    background: #2e2558;
+    color: #c4b5fd;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.15);
+}
+
+body.dark-mode .track-explore-link:hover {
+    background: #4c3a91;
+    color: #ffffff;
+    border-color: #a78bfa;
+    box-shadow: 0 0 18px rgba(139, 92, 246, 0.45);
+}
+
+/* Enroll button */
+body.dark-mode .enroll-track {
+    background: #7c3aed;
+    border-color: #8b5cf6;
+    color: #ffffff;
+}
+
+body.dark-mode .enroll-track:hover {
+    background: #8b5cf6;
+    border-color: #a78bfa;
+}
+
+/* Roadmap */
+body.dark-mode .roadmap {
+    background: transparent;
+    color: #c4b5fd;
+    border-color: #8b5cf6;
+}
+
+body.dark-mode .roadmap:hover,
+body.dark-mode .roadmap.active {
+    background: #312e81;
+    color: #ffffff;
+    border-color: #a78bfa;
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+}
+
+body.dark-mode .roadmap-wrapper {
+    background: #172033;
+    border-color: #334155;
+}
+
+body.dark-mode .roadmap-step:hover {
+    background: #26334a;
+}
+
+body.dark-mode .step-number {
+    background: #1e293b;
+    border-color: #8b5cf6;
+    color: #c4b5fd;
+}
+
+body.dark-mode .step-title {
+    color: #f8fafc;
+}
+
+body.dark-mode .step-description {
+    color: #94a3b8;
+}
+
+body.dark-mode .roadmap-list::before {
+    background: #4c3f91;
+}
+
+/* Search */
+body.dark-mode .search-box,
+body.dark-mode .filter-btn {
+    background: #1e293b;
+    color: #f8fafc;
+    border-color: #334155;
+}
+
+body.dark-mode .search-box input {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+body.dark-mode .search-box input::placeholder {
+    color: #94a3b8;
+}
+
+body.dark-mode .search-icon {
+    background: #1e293b;
+    color: #c4b5fd;
+}
+
+/* Compare table */
+body.dark-mode .compare-table {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-mode .compare-table thead th {
+    background: #312e81;
+    color: #c4b5fd;
+}
+
+body.dark-mode .compare-table tbody td {
+    background: #1e293b;
+    color: #cbd5e1;
+    border-color: #334155;
+}
+
+body.dark-mode .compare-title h2 {
+    color: #f8fafc;
+}
+
+body.dark-mode .compare-title span {
+    color: #94a3b8;
+}
+
+/* Empty message */
+body.dark-mode .empty-message {
+    background: #1e293b;
+    border-color: #334155;
+    color: #94a3b8;
 }

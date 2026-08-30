@@ -1,152 +1,288 @@
 :root {
-  --pf-purple: #6c5dd3;
-  --pf-purple-dark: #4e3fc7;
-  --pf-purple-light: #efebff;
-  --pf-bg: #f7f6fd;
-  --pf-text: #1e1b3a;
-  --pf-muted: #8b87a6;
+    /* Main Colors */
+    --pf-purple: #6d5dfc;
+    --pf-purple-dark: #5143c9;
+    --pf-purple-light: #f0edff;
+
+    /* Page */
+    --pf-bg: #f8f7fc;
+    --pf-card: #ffffff;
+
+    /* Text */
+    --pf-text: #211d3a;
+    --pf-muted: #77738f;
+    --pf-border: #ebe8f5;
+
+    /* Shadows */
+    --pf-shadow: 0 4px 18px rgba(81, 67, 201, 0.08);
 }
+
+
+/* =========================
+   BODY
+========================= */
+
 body {
-  font-family: "Inter", sans-serif;
-  background: var(--pf-bg);
-  color: var(--pf-text);
+    font-family: "Inter", sans-serif;
+    background: var(--pf-bg);
+    color: var(--pf-text);
 }
 
-/* Header */
+
+/* =========================
+   HEADER
+========================= */
+
 .pf-page-title {
-  padding-top: 85px;
-  font-size: 42px;
-  font-weight: 800;
-  color: var(--color-text-dark);
-  margin-top: 10px;
+    padding-top: 85px;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--pf-text);
+    margin-top: 10px;
 }
+
 .pf-page-subtitle {
-  color: var(--color-text-gray);
-  max-width: 600px;
-  line-height: 1.7;
+    color: var(--pf-muted);
+    max-width: 600px;
+    line-height: 1.7;
 }
 
-/* Filter pills */
+
+/* =========================
+   FILTER PILLS
+========================= */
+
 .pf-filter-btn {
-  border-radius: 24px;
-  padding: 8px 22px;
-  font-weight: 500;
-  font-size: 0.92rem;
-  border: 1px solid var(--pf-purple);
-  background: #fff;
-  color: var(--pf-purple);
-  transition: all 0.15s ease;
-}
-.pf-filter-btn:hover {
-  background: var(--pf-purple-light);
-}
-.pf-filter-btn.active {
-  background: var(--pf-purple);
-  color: #fff;
+    border-radius: 24px;
+    padding: 8px 22px;
+    font-weight: 500;
+    font-size: 0.92rem;
+
+    border: 1px solid var(--pf-purple);
+    background: #ffffff;
+    color: var(--pf-purple);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-/* Resource rows */
+.pf-filter-btn:hover {
+    background: var(--pf-purple-light);
+    color: var(--pf-purple-dark);
+    transform: translateY(-2px);
+}
+
+.pf-filter-btn.active {
+    background: var(--pf-purple);
+    color: #ffffff;
+    border-color: var(--pf-purple);
+    box-shadow: 0 5px 14px rgba(109, 93, 252, 0.22);
+}
+
+
+/* =========================
+   RESOURCE ROWS
+========================= */
+
 .pf-resource-row {
-  background: #fff;
-  border-radius: 14px;
-  padding: 14px 18px;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  border: 1px solid #f0eefa;
-  box-shadow: 0 2px 6px rgba(108, 93, 211, 0.04);
-  transition:
-    box-shadow 0.15s ease,
-    transform 0.15s ease;
+    background: var(--pf-card);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid var(--pf-border);
+    box-shadow: var(--pf-shadow);
+
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
 }
+
 .pf-resource-row:hover {
-  box-shadow: 0 6px 16px rgba(108, 93, 211, 0.1);
-  transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(81, 67, 201, 0.13);
+    transform: translateY(-3px);
+    border-color: #dcd6ff;
 }
+
+
+/* =========================
+   RESOURCE ICON
+========================= */
+
 .pf-resource-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 1.15rem;
-  flex-shrink: 0;
-  margin-right: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    font-size: 1.15rem;
+
+    flex-shrink: 0;
+    margin-right: 16px;
 }
+
+
+/* =========================
+   RESOURCE TEXT
+========================= */
+
 .pf-resource-title {
-  font-weight: 600;
-  color: var(--pf-text);
-  margin-bottom: 1px;
-  font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--pf-text);
+    margin-bottom: 1px;
+    font-size: 0.98rem;
 }
+
 .pf-resource-desc {
-  color: var(--pf-muted);
-  font-size: 0.85rem;
-  margin: 0;
+    color: var(--pf-muted);
+    font-size: 0.85rem;
+    margin: 0;
 }
+
+
+/* =========================
+   BADGE
+========================= */
+
 .pf-badge {
-  background: var(--pf-purple-light);
-  color: var(--pf-purple);
-  font-weight: 500;
-  font-size: 0.78rem;
-  padding: 5px 14px;
-  border-radius: 20px;
-  margin-right: 18px;
-  white-space: nowrap;
+    background: var(--pf-purple-light);
+    color: var(--pf-purple-dark);
+
+    font-weight: 500;
+    font-size: 0.78rem;
+
+    padding: 5px 14px;
+    border-radius: 20px;
+
+    margin-right: 18px;
+    white-space: nowrap;
 }
+
+
+/* =========================
+   LINK BUTTON
+========================= */
+
 .pf-link-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: var(--pf-purple-light);
-  color: var(--pf-purple);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.15s ease;
+    width: 38px;
+    height: 38px;
+
+    border-radius: 10px;
+
+    background: var(--pf-purple-light);
+    color: var(--pf-purple);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid transparent;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
+
 .pf-link-btn:hover {
-  background: var(--pf-purple);
-  color: #fff;
+    background: var(--pf-purple);
+    color: #ffffff;
+
+    transform: translateY(-2px) scale(1.04);
+
+    box-shadow: 0 6px 15px rgba(109, 93, 252, 0.28);
 }
+
+
+/* =========================
+   GROUP TITLE
+========================= */
 
 .pf-group-title {
-  font-weight: 600;
-  color: var(--pf-purple-dark);
-  margin: 26px 0 10px;
-  font-size: 1.02rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    font-weight: 600;
+    color: var(--pf-purple-dark);
+
+    margin: 26px 0 10px;
+
+    font-size: 1.02rem;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
+
 .pf-group-title:first-of-type {
-  margin-top: 6px;
+    margin-top: 6px;
 }
+
 .pf-group-title i {
-  color: var(--pf-purple);
+    color: var(--pf-purple);
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
+
+.pf-group-title:hover {
+    color: var(--pf-purple);
+    transform: translateX(4px);
+}
+
+.pf-group-title:hover i {
+    color: var(--pf-purple);
+    transform: scale(1.15) rotate(-5deg);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 576px) {
-  .pf-resource-row {
-    flex-wrap: wrap;
-  }
-  .pf-badge {
-    order: 3;
-    margin-top: 8px;
-    margin-right: 0;
-  }
-  .pf-resource-icon {
-    margin-right: 12px;
-  }
-}
-/* =========================================
-   RESOURCES PAGE ANIMATIONS
-========================================= */
 
-/* الحالة الأولية */
+    .pf-resource-row {
+        flex-wrap: wrap;
+    }
+
+    .pf-badge {
+        order: 3;
+        margin-top: 8px;
+        margin-right: 0;
+    }
+
+    .pf-resource-icon {
+        margin-right: 12px;
+    }
+}
+
+
+/* =====================================================
+   RESOURCES PAGE ANIMATIONS
+===================================================== */
+
+
+/* Initial State */
+
 .pf-page-title,
 .pf-page-subtitle,
 .pf-filter-btn,
@@ -155,43 +291,66 @@ body {
     opacity: 0;
 }
 
+
 /* Page Title */
+
 .pf-page-title {
     transform: translateY(-30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
 }
+
 
 /* Subtitle */
+
 .pf-page-subtitle {
     transform: translateY(20px);
-    transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
+
+    transition:
+        opacity 0.7s ease 0.15s,
+        transform 0.7s ease 0.15s;
 }
+
 
 /* Filter Buttons */
+
 .pf-filter-btn {
     transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
 }
+
 
 /* Group Titles */
+
 .pf-group-title {
     transform: translateX(-30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
 }
 
+
 /* Resource Rows */
+
 .pf-resource-row {
     transform: translateY(35px);
+
     transition:
         opacity 0.6s ease,
         transform 0.6s ease,
-        box-shadow 0.15s ease;
+        box-shadow 0.25s ease;
 }
 
 
-/* =========================================
+/* =========================
    SHOW ANIMATION
-========================================= */
+========================= */
 
 .pf-page-title.show,
 .pf-page-subtitle.show,
@@ -203,9 +362,9 @@ body {
 }
 
 
-/* =========================================
-   STAGGER FOR FILTERS
-========================================= */
+/* =========================
+   FILTER STAGGER
+========================= */
 
 .pf-filter-btn:nth-child(1) {
     transition-delay: 0.05s;
@@ -228,9 +387,9 @@ body {
 }
 
 
-/* =========================================
-   STAGGER RESOURCE ROWS
-========================================= */
+/* =========================
+   RESOURCE STAGGER
+========================= */
 
 .pf-resource-row:nth-of-type(1) {
     transition-delay: 0.05s;
@@ -254,4 +413,163 @@ body {
 
 .pf-resource-row:nth-of-type(6) {
     transition-delay: 0.3s;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode {
+
+    /* Main */
+    --pf-purple: #a78bfa;
+    --pf-purple-dark: #c4b5fd;
+    --pf-purple-light: #302755;
+
+    /* Page */
+    --pf-bg: #0f172a;
+    --pf-card: #1e293b;
+
+    /* Text */
+    --pf-text: #f8fafc;
+    --pf-muted: #a8b1c2;
+    --pf-border: #334155;
+
+    /* Shadow */
+    --pf-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   DARK HEADER
+========================= */
+
+body.dark-mode .pf-page-title {
+    color: #f8fafc;
+}
+
+body.dark-mode .pf-page-subtitle {
+    color: #a8b1c2;
+}
+
+
+/* =========================
+   DARK FILTERS
+========================= */
+
+body.dark-mode .pf-filter-btn {
+    background: #1e293b;
+    color: #c4b5fd;
+    border-color: #7c5cff;
+}
+
+body.dark-mode .pf-filter-btn:hover {
+    background: #302755;
+    color: #ffffff;
+}
+
+body.dark-mode .pf-filter-btn.active {
+    background: #7c5cff;
+    color: #ffffff;
+    border-color: #8b6cff;
+    box-shadow: 0 5px 16px rgba(124, 92, 255, 0.3);
+}
+
+
+/* =========================
+   DARK RESOURCE ROW
+========================= */
+
+body.dark-mode .pf-resource-row {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: none;
+}
+
+body.dark-mode .pf-resource-row:hover {
+    background: #223047;
+    border-color: #5143c9;
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.25),
+        0 0 12px rgba(124, 92, 255, 0.08);
+}
+
+
+/* =========================
+   DARK TEXT
+========================= */
+
+body.dark-mode .pf-resource-title {
+    color: #f8fafc;
+}
+
+body.dark-mode .pf-resource-desc {
+    color: #a8b1c2;
+}
+
+
+/* =========================
+   DARK BADGE
+========================= */
+
+body.dark-mode .pf-badge {
+    background: #302755;
+    color: #c4b5fd;
+}
+
+
+/* =========================
+   DARK LINK ICON
+========================= */
+
+body.dark-mode .pf-link-btn {
+    background: #302755;
+    color: #ddd6fe;
+    border-color: #7c5cff;
+
+    box-shadow: 0 0 8px rgba(124, 92, 255, 0.12);
+}
+
+body.dark-mode .pf-link-btn:hover {
+    background: #7c5cff;
+    color: #ffffff;
+
+    transform: translateY(-2px) scale(1.06);
+
+    box-shadow:
+        0 0 12px rgba(124, 92, 255, 0.45),
+        0 6px 18px rgba(124, 92, 255, 0.25);
+}
+
+
+/* =========================
+   DARK GROUP TITLE
+========================= */
+
+body.dark-mode .pf-group-title {
+    color: #c4b5fd;
+}
+
+body.dark-mode .pf-group-title i {
+    color: #a78bfa;
+}
+
+body.dark-mode .pf-group-title:hover {
+    color: #ffffff;
+
+    transform: translateX(5px);
+
+    text-shadow:
+        0 0 10px rgba(167, 139, 250, 0.45);
+}
+
+body.dark-mode .pf-group-title:hover i {
+    color: #ffffff;
+
+    transform: scale(1.2) rotate(-8deg);
+
+    filter:
+        drop-shadow(0 0 6px rgba(167, 139, 250, 0.8));
 }
