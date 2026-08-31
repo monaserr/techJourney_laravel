@@ -1069,70 +1069,6 @@ body.dark-mode .logo-dark {
   overflow-x: hidden;
 }
 
-/* =========================================
-   HERO ANIMATION - HOME ONLY
-========================================= */
-
-.animated-page .hero-section {
-  overflow: hidden;
-}
-
-.animated-page .hero-title,
-.animated-page .hero-text,
-.animated-page .hero-button {
-  opacity: 0;
-  transform: translateX(-50px);
-  animation: heroTextEnter 0.8s ease forwards;
-}
-
-.animated-page .hero-title {
-  animation-delay: 0.2s;
-}
-
-.animated-page .hero-text {
-  animation-delay: 0.4s;
-}
-
-.animated-page .hero-button {
-  animation-delay: 0.6s;
-}
-
-.animated-page .hero-image {
-  opacity: 0;
-  transform: translateX(50px);
-  animation: heroImageEnter 0.9s ease 0.3s forwards;
-}
-
-.animated-page .hero-image img {
-  animation: heroFloat 4s ease-in-out 1.2s infinite;
-}
-
-/* Hero Keyframes */
-
-@keyframes heroTextEnter {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes heroImageEnter {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes heroFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
-}
 
 /* =========================================
    SECTION TITLES
@@ -1430,42 +1366,179 @@ html.preload-dark body {
   background: #0f172a;
 }
 
-.student-nav-avatar:hover {
-  transform: translateY(-1px);
-  border-color: var(--color-primary-light);
-  box-shadow: 0 5px 14px rgba(79, 70, 229, 0.14);
+/* =========================================
+   STUDENT NAV AVATAR
+========================================= */
+
+.student-nav-avatar {
+    width: 40px !important;
+    height: 40px !important;
+
+    min-width: 40px !important;
+    min-height: 40px !important;
+
+    max-width: 40px !important;
+    max-height: 40px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: block !important;
+
+    position: relative;
+
+    overflow: hidden !important;
+
+    flex: 0 0 40px !important;
+
+    border-radius: 50% !important;
+
+    box-sizing: border-box !important;
+
+    line-height: 0;
+
+    background: var(--color-bg-light);
+
+    border: 1px solid var(--color-border);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
+
+
+/* =========================================
+   AVATAR IMAGE
+========================================= */
 
 .student-nav-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+
+    min-width: 100% !important;
+    min-height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+
+    border: 0 !important;
+    border-radius: 50% !important;
+
+    box-sizing: border-box !important;
 }
+
+
+/* =========================================
+   AVATAR HOVER
+========================================= */
+
+.student-nav-avatar:hover {
+    transform: translateY(-1px);
+
+    border-color: var(--color-primary-light);
+
+    box-shadow:
+        0 5px 14px rgba(79, 70, 229, 0.16);
+}
+
+
+/* =========================================
+   ACCOUNT RIGHT
+========================================= */
+
+.student-nav-account-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
 
 .student-nav-account .student-logout {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  padding: 0 17px !important;
-  margin: 0 !important;
-  border-radius: 20px !important;
-  background: var(--color-bg-light) !important;
-  color: var(--color-text-dark) !important;
-  border: 1px solid var(--color-border) !important;
-  text-decoration: none !important;
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  white-space: nowrap;
-  transition: all 0.25s ease;
+    height: 40px !important;
+    min-height: 40px !important;
+
+    min-width: 82px;
+
+    padding: 0 17px !important;
+    margin: 0 !important;
+
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px !important;
+
+    background: var(--color-bg-light) !important;
+    color: var(--color-text-dark) !important;
+
+    border: 1px solid var(--color-border) !important;
+
+    text-decoration: none !important;
+
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
+
+/* =========================================
+   LOGOUT HOVER
+========================================= */
+
 .student-nav-account .student-logout:hover {
-  color: var(--color-primary) !important;
-  border-color: var(--color-primary-light) !important;
-  background: #f5f3ff !important;
-  transform: none !important;
-  box-shadow: none !important;
+    color: var(--color-primary) !important;
+
+    border-color: var(--color-primary-light) !important;
+
+    background: #f5f3ff !important;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 14px rgba(79, 70, 229, 0.12) !important;
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark-mode .student-nav-avatar {
+    background: #151C2B;
+
+    border-color: rgba(148, 163, 184, 0.18);
+
+    box-shadow:
+        0 0 12px rgba(124, 58, 237, 0.08);
+}
+
+body.dark-mode .student-nav-avatar:hover {
+    border-color: rgba(168, 85, 247, 0.55);
+
+    box-shadow:
+        0 0 16px rgba(124, 58, 237, 0.20);
 }
 
 .trackcard-buttons .enroll-track.enrolled,
@@ -1524,23 +1597,7 @@ html.preload-dark body {
   z-index: 20;
 }
 
-.student-nav-account-right .student-nav-avatar {
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
-}
 
-.student-nav-account-right .student-logout {
-  height: 40px;
-  min-width: 82px;
-  padding: 0 17px !important;
-  margin: 0 !important;
-  border-radius: 20px !important;
-
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-}
 
 @media (min-width: 769px) {
   .navbar-container > .nav-links {
@@ -1768,14 +1825,7 @@ html.preload-dark body {
   gap: 14px;
 }
 
-.animated-page .hero-title,
-.animated-page .hero-text,
-.animated-page .hero-button,
-.animated-page .hero-image {
-  opacity: 1 !important;
-  transform: none !important;
-  animation: none !important;
-}
+
 
 }
 
@@ -2085,7 +2135,7 @@ body.dark-mode .about-card,
 body.dark-mode .track-card,
 body.dark-mode .home-event-card {
 
-    background:  color: #F3F4F6;;
+    background: #F3F4F6;
 
     border: 1px solid rgba(148, 163, 184, 0.16);
 
@@ -2551,16 +2601,6 @@ body.dark-mode .student-modal .success-icon {
     display: none !important;
     box-shadow: none !important;
 }
-
-
-
-
-
-
-
-
-
-
 
 .logo-light,
 .logo-dark {
@@ -3632,3 +3672,72 @@ body.dark-mode .learn-more-btn:hover {
 .logo-dark { display: none; }
 .dark-mode .logo-dark { display: block; }
 .dark-mode .logo-light { display: none; }
+
+
+//* =========================================
+   HERO ANIMATION - HOME ONLY
+========================================= */
+
+.animated-page {
+    overflow-x: hidden;
+}
+
+.animated-page .hero-section {
+    overflow: hidden;
+}
+
+.animated-page .hero-title {
+    animation: heroTextEnter 0.8s ease 0.2s both;
+}
+
+.animated-page .hero-text {
+    animation: heroTextEnter 0.8s ease 0.4s both;
+}
+
+.animated-page .hero-button {
+    animation: heroTextEnter 0.8s ease 0.6s both;
+}
+
+.animated-page .hero-image {
+    animation: heroImageEnter 0.9s ease 0.3s both;
+}
+
+.animated-page .hero-image img {
+    animation: heroFloat 4s ease-in-out 1.2s infinite;
+}
+
+@keyframes heroTextEnter {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes heroImageEnter {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes heroFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+

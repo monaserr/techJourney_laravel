@@ -95,22 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =========================================
-       HERO BUTTON ANIMATION
-    ========================================= */
-
-    const heroButton = document.querySelector(".hero-button");
-
-    if (heroButton) {
-        heroButton.style.opacity = "0";
-        heroButton.style.transform = "translateX(-50px)";
-
-        setTimeout(function () {
-            heroButton.style.opacity = "1";
-            heroButton.style.transform = "translateX(0)";
-        }, 600);
-    }
-
+   
 
     /* =========================================
        EVENTS PAGE SCROLL ANIMATION
