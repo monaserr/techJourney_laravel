@@ -326,7 +326,7 @@
 
 
     {{-- ================= EVENTS ================= --}}
-
+@if(!auth()->check() || auth()->user()->role !== 'instructor')
     <section class="events-section py-5">
 
         <div class="container">
@@ -539,7 +539,7 @@
         </div>
 
     </section>
-
+@endif
 
 
     {{-- ================= ASSESSMENT ================= --}}
