@@ -326,32 +326,30 @@
 
 
     {{-- ================= EVENTS ================= --}}
-@if(!auth()->check() || auth()->user()->role !== 'instructor')
     <section class="events-section py-5">
-
+    
         <div class="container">
-
+    
             <div class="text-center mb-5">
-
+    
                 <h3 class="events-badge">
                     Our Events
                 </h3>
-
+    
                 <div class="track-line"></div>
-
+    
                 <h2 class="tracks-title">
                     Choose Your
                     <span>Tech Experience</span>
                 </h2>
-
+    
                 <p class="events-subtitle">
                     Join Career events to help you learn,
                     connect and grow
                 </p>
-
+    
             </div>
-
-
+    
             @if ($limitedEvents->count())
 
                 <div class="row g-4 home-events">
@@ -426,11 +424,9 @@
                 </div>
 
             @endif
-
-
-
+    
             {{-- ================= EVENT MODALS ================= --}}
-
+    
             @foreach ($limitedEvents as $event)
 
                 <div class="modal fade" id="eventModal{{ $event->id }}" tabindex="-1" aria-hidden="true">
@@ -501,14 +497,17 @@
 
                             </div>
 
-
                             <div class="modal-footer">
 
-                                <a class="event-book-btn" href="{{ route('student.events.index') }}">
-
-                                    Book Now
-
-                                </a>
+                                @if(auth()->check() && auth()->user()->role === 'instructor')
+                                    <button type="button" class="event-book-btn border-0" onclick="alert('You must be a student to book events.')">
+                                        Book Now
+                                    </button>
+                                @else
+                                    <a class="event-book-btn" href="{{ route('student.events.index') }}">
+                                        Book Now
+                                    </a>
+                                @endif
 
                             </div>
 
@@ -519,27 +518,24 @@
                 </div>
 
             @endforeach
-
-
-
+    
             {{-- Explore All Events --}}
-
+    
             <div class="text-center mt-5">
-
+    
                 <a href="{{ route('student.events.index') }}" class="explore-btn">
-
+    
                     Explore All Events
-
+    
                     <i class="bi bi-arrow-right"></i>
-
+    
                 </a>
-
+    
             </div>
-
+    
         </div>
-
+    
     </section>
-@endif
 
 
     {{-- ================= ASSESSMENT ================= --}}
